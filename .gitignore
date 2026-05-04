@@ -1,0 +1,27 @@
+# WordPress core
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/xmlrpc.php
+/license.txt
+/readme.html
+
+# Uploads and generated files
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+
+# Config with secrets
+wp-config.php
+
+# Third-party plugins (install via composer or manually on server)
+wp-content/plugins/advanced-custom-fields-pro/
+wp-content/plugins/polylang/
+wp-content/plugins/polylang-pro/
+
+# OS & editor files
+.DS_Store
+.env
+node_modules/
