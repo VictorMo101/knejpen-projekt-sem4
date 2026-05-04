@@ -1,0 +1,47 @@
+name: Deploy to Simply.com
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Optional: install Node for TestCafe
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install TestCafe dependencies
+        run: npm install
+
+      # Run TestCafe against your live/staging site
+      # (or a preview environment if you have one)
+      - name: Run TestCafe tests
+        run: npx testcafe chrome:headless tests/ --hostname localhost
+        # Point this at your staging URL or live URL
+        env:
+          TEST_URL: https://yourdomain.simply.com
+
+      # Deploy via SFTP only if tests pass
+      - name: Deploy to Simply.com via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftps           
+          local-dir: ./wp-content/
+          server-dir: /public_html/wp-content/
+          exclude: |
+            **/.git*
+            **/node_modules/**
+            **/.github/**
