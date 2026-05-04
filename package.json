@@ -3,6 +3,7 @@
     "test": "testcafe chrome:headless test/"
   },
   "devDependencies": {
+    "dotenv": "^16.4.7",
     "testcafe": "^3.0.0"
   }
 }

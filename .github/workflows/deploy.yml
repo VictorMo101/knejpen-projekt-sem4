@@ -24,7 +24,7 @@ jobs:
       - name: Run TestCafe test
         run: npx testcafe chrome:headless test/ --hostname localhost
         env:
-          TEST_URL: https://yourdomain.simply.com
+          TEST_URL: https://test.knejpen-projekt.dk
 
       - name: Deploy to Simply.com via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
