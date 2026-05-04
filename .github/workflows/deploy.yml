@@ -26,13 +26,17 @@ jobs:
         env:
           TEST_URL: https://knejpen-projekt.dk
 
-      - name: Deploy custom theme via FTP
+      - name: Deploy to Simply.com via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          protocol: ftps
+          protocol: ftps           
           local-dir: ./wp-content/themes/knejpen/
           server-dir: /public_html/wp-content/themes/knejpen/
+          exclude: |
+            .git*
+            .github/**
+            node_modules/**
