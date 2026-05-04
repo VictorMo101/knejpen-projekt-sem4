@@ -13,7 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Optional: install Node for TestCafe
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -22,16 +21,12 @@ jobs:
       - name: Install TestCafe dependencies
         run: npm install
 
-      # Run TestCafe against your live/staging site
-      # (or a preview environment if you have one)
-      - name: Run TestCafe tests
-        run: npx testcafe chrome:headless tests/ --hostname localhost
-        # Point this at your staging URL or live URL
+      - name: Run TestCafe test
+        run: npx testcafe chrome:headless test/ --hostname localhost
         env:
           TEST_URL: https://yourdomain.simply.com
 
-      # Deploy via SFTP only if tests pass
-      - name: Deploy to Simply.com via SFTP
+      - name: Deploy to Simply.com via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
