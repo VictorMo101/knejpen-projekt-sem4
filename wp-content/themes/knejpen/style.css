@@ -57,7 +57,7 @@
     align-items: center;
 }
 
-.events {
+/* .events {
     width: 100%;
     height: 500px;
     background-color: #ff0000;
@@ -67,7 +67,7 @@
     max-width: 1200px;
     background-color: #65191B;
     display: flex;
-    align-items: center;       /* important */
+    align-items: center;  
     justify-content: center;
     margin: 0 auto;
     gap: 15px;                 
@@ -83,3 +83,4 @@
     height: 1px;
     background-color: #FEF2A6;
 }
+ */

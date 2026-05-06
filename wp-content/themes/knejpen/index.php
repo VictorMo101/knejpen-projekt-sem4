@@ -14,13 +14,13 @@
     </div>
 </section>
 
-<section class="events">
+<!-- <section class="events">
     <div class="events-container">
         <span class="events-line"></span>
         <h3>Events</h3>
         <span class="events-line"></span>
          
     </div>
-</section>
+</section> -->
 
 <?php get_footer(); ?>
