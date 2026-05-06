@@ -12,7 +12,7 @@
     </div>
 </section>
 
-<section class="about">
+<section id="about">
     <div class="about-container">
         <div class="about-text">
         <h2>Bags and Bags</h2>
@@ -27,14 +27,19 @@
 </section>
 
 
-<!-- <section class="events">
+<section id="events"
+style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="events-container">
         <span class="events-line"></span>
-        <h3>Events</h3>
+        <h2>Events</h2>
         <span class="events-line"></span>
          
     </div>
-</section> -->
+</section>
+
+<section id="about">
+    
+</section>
 
 
 <?php get_footer(); ?>
