@@ -10,6 +10,8 @@
             <img src="<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-logo-temp-1.png'); ?>" alt="Knejpen Logo">
         </div>
     </div>
+    <div class="delete">
+    </div>
 </section>
 
 <?php get_footer(); ?>
