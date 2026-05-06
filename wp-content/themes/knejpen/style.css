@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+}
+
 .video-wrap {
     width: 100%;
     height: 100svh;
@@ -46,10 +50,13 @@
 }
 
 
-.about {
+#about {
     width: 100%;
     height: 100vh;
     background-color:#65191B;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -24px 36px -30px #00000090, 0 24px 36px -30px #00000090;
 }
 
 .about-container{
@@ -99,29 +106,134 @@
     align-items: center;
 }
 
-/* .events {
+#events {
     width: 100%;
-    height: 500px;
-    background-color: #ff0000;
+    height: 80vh;
 }
 
 .events-container {
     max-width: 1200px;
-    background-color: #65191B;
     display: flex;
     align-items: center;  
     justify-content: center;
     margin: 0 auto;
+    padding: 75px 0 0 0;
     gap: 15px;                 
 }
 
-.events-container h3 {
+.events-container h2 {
     color: #FEF2A6;
     font-size: 30px;        
 }
 
 .events-line {
     flex: 1;
-    height: 1px;
+    height: 2px;
+    background-color: #FEF2A6;
 }
- */
+
+.events-wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px;
+    justify-content: space-evenly;
+}
+
+.events-wrapper a {
+    text-decoration: none;
+}
+
+
+.event-card {
+    width: 420px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #3a1010;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+}
+
+.event-img {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.event-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.badge {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(30, 10, 10, 0.72);
+    border-radius: 6px;
+    padding: 4px 9px;
+    font-size: 12px;
+    color: #e8cba0;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+}
+
+.badge-left  { left: 10px; }
+.badge-right { right: 10px; }
+
+.badge svg {
+    flex-shrink: 0;
+}
+
+.event-body {
+    padding: 14px 16px 48px;
+}
+
+.event-meta {
+    display: flex;
+    align-items: center;
+    font-size: 12.5px;
+    color: #c08060;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.event-meta .sep {
+    margin: 0 10px;
+    color: #6a3a2a;
+}
+
+.heart {
+    margin-left: auto;
+    color: #e8cba0;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.event-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #f0d0b0;
+    margin: 0 0 4px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.event-sub {
+    font-size: 12px;
+    color: #c08060;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}

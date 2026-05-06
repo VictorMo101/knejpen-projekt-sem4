@@ -12,7 +12,7 @@
     </div>
 </section>
 
-<section class="about">
+<section id="about">
     <div class="about-container">
         <div class="about-text">
         <h2>Bags and Bags</h2>
@@ -27,14 +27,79 @@
 </section>
 
 
-<!-- <section class="events">
+<section id="events" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="events-container">
         <span class="events-line"></span>
-        <h3>Events</h3>
+            <h2>Events</h2>
         <span class="events-line"></span>
-         
+        </div>
     </div>
-</section> -->
+
+    <div class="events-wrapper">
+        <a href="#">
+            <div class="event-card">
+                <div class="event-img">
+                    <img src="https://picsum.photos/500/500" alt="Venue photo" />
+                
+                    <div class="badge badge-left">
+                        <svg width="11" height="14" viewBox="0 0 11 14" fill="none" aria-hidden="true">
+                        <path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 9.5 4.5 9.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6.125A1.625 1.625 0 1 1 5.5 2.875a1.625 1.625 0 0 1 0 3.25z" fill="#e8cba0"/>
+                        </svg>
+                        Esbjerg
+                    </div>
+                
+                    <div class="badge badge-right">10kr - 100kr</div>
+                </div>
+        
+                <div class="event-body">
+                    <div class="event-meta">
+                        <span>June 6th 2016</span>
+                        <span class="sep">|</span>
+                        <span>KL 8 til KL 9</span>
+                        <span class="sep">|</span>
+                        <span class="heart" aria-label="Saved">♥</span>
+                    </div>
+                    <div class="event-title">lorem ipsum </div>
+                    <div class="event-sub">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </div>
+                </div>
+            </div>
+        </a>
+
+                <a href="#">
+            <div class="event-card">
+                <div class="event-img">
+                    <img src="https://picsum.photos/500/500" alt="Venue photo" />
+                
+                    <div class="badge badge-left">
+                        <svg width="11" height="14" viewBox="0 0 11 14" fill="none" aria-hidden="true">
+                        <path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 9.5 4.5 9.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6.125A1.625 1.625 0 1 1 5.5 2.875a1.625 1.625 0 0 1 0 3.25z" fill="#e8cba0"/>
+                        </svg>
+                        Esbjerg
+                    </div>
+                
+                    <div class="badge badge-right">10kr - 100kr</div>
+                </div>
+        
+                <div class="event-body">
+                    <div class="event-meta">
+                        <span>June 6th 2016</span>
+                        <span class="sep">|</span>
+                        <span>KL 8 til KL 9</span>
+                        <span class="sep">|</span>
+                        <span class="heart" aria-label="Saved">♥</span>
+                    </div>
+                    <div class="event-title">lorem ipsum </div>
+                    <div class="event-sub">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<section id="about">
+    
+</section>
 
 
 <?php get_footer(); ?>
