@@ -81,6 +81,8 @@
 .events-line {
     flex: 1;
     height: 1px;
-    background-color: #FEF2A6;
 }
  */
+.delete {
+    display: none;
+}
