@@ -40,18 +40,4 @@ jobs:
             .git*
             .github/**
             node_modules/**
-
-
-      - name: Install lftp
-        run: sudo apt-get install -y lftp
-
-      - name: Deploy Uploads via lftp
-        run: |
-          lftp -c "
-            set ftp:ssl-allow no;
-            set net:max-retries 3;
-            open ftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_HOST }};
-            mirror --reverse --verbose ./wp-content/uploads/ /public_html/wp-content/uploads/;
-          "
-
             
