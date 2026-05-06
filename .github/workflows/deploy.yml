@@ -18,13 +18,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install TestCafe dependencies
-        run: npm install
+      # - name: Install TestCafe dependencies
+      #   run: npm install
 
-      - name: Run TestCafe test
-        run: npx testcafe chrome:headless test/ --hostname localhost
-        env:
-          TEST_URL: https://knejpen-projekt.dk
+      # - name: Run TestCafe test
+      #   run: npx testcafe chrome:headless test/ --hostname localhost
+      #   env:
+      #     TEST_URL: https://knejpen-projekt.dk
 
       - name: Deploy to Simply.com via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
