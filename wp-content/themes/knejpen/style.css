@@ -4,6 +4,64 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #65191B;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 50px;
+    padding: 0.85rem 1.5rem;
+    background: rgba(33, 10, 10, 0.38);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(254, 242, 166, 0.16);
+    color: #fef2a6;
+}
+
+.site-brand {
+    color: #fef2a6;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    color: rgba(254, 242, 166, 0.9);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.site-nav a:hover,
+.site-brand:hover {
+    color: #ffffff;
+}
+
 .video-wrap {
     width: 100%;
     height: 100svh;
@@ -43,4 +101,198 @@
     width: clamp(260px, 55vw, 520px);
     max-width: 92vw;
     height: auto;
+}
+
+
+#about {
+    width: 100%;
+    height: 100vh;
+    background-color:#65191B;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -24px 36px -30px #00000090, 0 24px 36px -30px #00000090;
+}
+
+.about-container{
+    max-width: 1200px;
+    height: 100%;
+    background-color: #65191B;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center; 
+    align-items: center;
+}
+
+.about-text {
+    width: 50%;
+    height: 100%;
+    background-color: #65191B;
+    padding: 2.5rem;
+}
+
+.about-text h2 {
+    color: #FEF2A6;
+    font-size: 48px;
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    color: #FEF2A6; 
+    font-size: 20px;
+
+}
+
+.about-image{
+    width: 30%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: aqua;
+}
+
+.about-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    align-items: center;
+}
+
+#events {
+    width: 100%;
+    height: 80vh;
+}
+
+.events-container {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+    margin: 0 auto;
+    padding: 75px 0 0 0;
+    gap: 15px;                 
+}
+
+.events-container h2 {
+    color: #FEF2A6;
+    font-size: 30px;        
+}
+
+.events-container h2 span {
+    color: #FEF2A6;
+    font-size: 12px;        
+}
+
+.events-line {
+    flex: 1;
+    height: 2px;
+    background-color: #FEF2A6;
+}
+
+.events-wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px;
+    justify-content: space-evenly;
+}
+
+.events-wrapper a {
+    text-decoration: none;
+}
+
+
+.event-card {
+    width: 420px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #3a1010;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+}
+
+.event-img {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.event-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.badge {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(30, 10, 10, 0.72);
+    border-radius: 6px;
+    padding: 4px 9px;
+    font-size: 12px;
+    color: #e8cba0;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+}
+
+.badge-left  { left: 10px; }
+.badge-right { right: 10px; }
+
+.badge svg {
+    flex-shrink: 0;
+}
+
+.event-body {
+    padding: 14px 16px 48px;
+}
+
+.event-meta {
+    display: flex;
+    align-items: center;
+    font-size: 12.5px;
+    color: #c08060;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.event-meta .sep {
+    margin: 0 10px;
+    color: #6a3a2a;
+}
+
+.heart {
+    margin-left: auto;
+    color: #e8cba0;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.event-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #f0d0b0;
+    margin: 0 0 4px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.event-sub {
+    font-size: 12px;
+    color: #c08060;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
