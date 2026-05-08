@@ -10,7 +10,6 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #65191B;
 }
 
 .site-header {
@@ -29,11 +28,11 @@ body {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(254, 242, 166, 0.16);
-    color: #fef2a6;
+    color: #FEF2A6;
 }
 
 .site-brand {
-    color: #fef2a6;
+    color: #FEF2A6;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 800;
@@ -49,7 +48,7 @@ body {
 }
 
 .site-nav a {
-    color: rgba(254, 242, 166, 0.9);
+    color: #FEF2A6;
     text-decoration: none;
     font-size: 0.82rem;
     font-weight: 600;
@@ -150,7 +149,6 @@ body {
     justify-content: center;
     align-items: center;
     margin: auto;
-    background-color: aqua;
 }
 
 .about-image img{
@@ -189,6 +187,7 @@ body {
     flex: 1;
     height: 2px;
     background-color: #FEF2A6;
+    margin: 20px;
 }
 
 .events-wrapper {
@@ -242,7 +241,7 @@ body {
     border-radius: 6px;
     padding: 4px 9px;
     font-size: 12px;
-    color: #e8cba0;
+    color: #FEF2A6;
     font-weight: 500;
     backdrop-filter: blur(2px);
 }
@@ -262,7 +261,7 @@ body {
     display: flex;
     align-items: center;
     font-size: 12.5px;
-    color: #c08060;
+    color: #FEF2A6;
     margin-bottom: 10px;
     font-weight: 400;
     letter-spacing: 0.01em;
@@ -275,7 +274,7 @@ body {
 
 .heart {
     margin-left: auto;
-    color: #e8cba0;
+    color: #FEF2A6;
     font-size: 18px;
     line-height: 1;
 }
@@ -283,7 +282,7 @@ body {
 .event-title {
     font-size: 22px;
     font-weight: 800;
-    color: #f0d0b0;
+    color: #FEF2A6;
     margin: 0 0 4px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -291,7 +290,7 @@ body {
 
 .event-sub {
     font-size: 12px;
-    color: #c08060;
+    color: #FEF2A6;
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -299,17 +298,16 @@ body {
 
 #media {
     width: 100%;
-    height: 100vh;
-    background-color:#65191B;
     position: relative;
     z-index: 1;
     box-shadow: 0 -24px 36px -30px #00000090, 0 24px 36px -30px #00000090;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #65191B;
 }
 
 .image {
-    background-color: blue;
     overflow: hidden;
 }
 
@@ -317,14 +315,37 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 .media-container {
+    height: auto;
     display: grid;
     grid-template-columns: 300px 300px 300px 300px;
-    grid-template-rows: 300px 300px 300px 300px;
+    grid-template-rows: 300px 300px;
     grid-template-areas:
         "box-1 box-2 box-3 box-4"
         "box-1 box-5 box-6 box-7"
+}
+
+.section-break {
+    height: 140px;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.facebook-button {
+    position: absolute;
+    background-color: #5c1a1a;
+    color: #FEF2A6;
+    font-weight: 700;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.facebook-button:hover {
+    background-color: #6e2020;
 }
