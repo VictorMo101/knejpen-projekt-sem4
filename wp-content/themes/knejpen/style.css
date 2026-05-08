@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #65191B;
+    --secondary-color: #FEF2A6;
+    --box-shadow: 0 -24px 36px -30px #00000090, 0 24px 36px -30px #00000090;
+    --primary-hover: #7A1F22;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +17,6 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #65191B;
 }
 
 .site-header {
@@ -25,15 +31,13 @@ body {
     gap: 1rem;
     min-height: 50px;
     padding: 0.85rem 1.5rem;
-    background: rgba(33, 10, 10, 0.38);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(254, 242, 166, 0.16);
-    color: #fef2a6;
+    color: var(--secondary-color);
 }
 
 .site-brand {
-    color: #fef2a6;
+    color: var(--secondary-color);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 800;
@@ -49,7 +53,7 @@ body {
 }
 
 .site-nav a {
-    color: rgba(254, 242, 166, 0.9);
+    color: var(--secondary-color);
     text-decoration: none;
     font-size: 0.82rem;
     font-weight: 600;
@@ -107,18 +111,19 @@ body {
 #about {
     width: 100%;
     height: 100vh;
-    background-color:#65191B;
+    background-color:var(--primary-color);
     position: relative;
     z-index: 1;
-    box-shadow: 0 -24px 36px -30px #00000090, 0 24px 36px -30px #00000090;
+    box-shadow: var(--box-shadow);
 }
 
 .about-container{
     max-width: 1200px;
     height: 100%;
-    background-color: #65191B;
+    background-color: var(--primary-color);
     display: flex;
     margin: 0 auto;
+    padding: 20px;
     justify-content: center; 
     align-items: center;
 }
@@ -126,31 +131,29 @@ body {
 .about-text {
     width: 50%;
     height: 100%;
-    background-color: #65191B;
-    padding: 2.5rem;
+    background-color: var(--primary-color);
+    padding: 2rem 2rem 2rem 0;
 }
 
 .about-text h2 {
-    color: #FEF2A6;
+    color: var(--secondary-color);
     font-size: 48px;
     margin-top: 3.5rem;
     margin-bottom: 1rem;
 }
 
 .about-text p {
-    color: #FEF2A6; 
+    color: var(--secondary-color); 
     font-size: 20px;
 
 }
 
 .about-image{
-    width: 30%;
     height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    background-color: aqua;
 }
 
 .about-image img{
@@ -176,19 +179,20 @@ body {
 }
 
 .events-container h2 {
-    color: #FEF2A6;
+    color: var(--secondary-color);
     font-size: 30px;        
 }
 
 .events-container h2 span {
-    color: #FEF2A6;
+    color: var(--secondary-color);
     font-size: 12px;        
 }
 
 .events-line {
     flex: 1;
     height: 2px;
-    background-color: #FEF2A6;
+    background-color: var(--secondary-color);
+    margin: 20px;
 }
 
 .events-wrapper {
@@ -209,8 +213,8 @@ body {
     width: 420px;
     border-radius: 12px;
     overflow: hidden;
-    background: #3a1010;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    background-color: var(--primary-color);
+    box-shadow: var(--box-shadow);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -238,11 +242,11 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
-    background: rgba(30, 10, 10, 0.72);
+    background: var(--primary-color);
     border-radius: 6px;
     padding: 4px 9px;
     font-size: 12px;
-    color: #e8cba0;
+    color: var(--secondary-color);
     font-weight: 500;
     backdrop-filter: blur(2px);
 }
@@ -262,7 +266,7 @@ body {
     display: flex;
     align-items: center;
     font-size: 12.5px;
-    color: #c08060;
+    color: var(--secondary-color);
     margin-bottom: 10px;
     font-weight: 400;
     letter-spacing: 0.01em;
@@ -270,12 +274,12 @@ body {
 
 .event-meta .sep {
     margin: 0 10px;
-    color: #6a3a2a;
+    color: var(--secondary-color);
 }
 
 .heart {
     margin-left: auto;
-    color: #e8cba0;
+    color: var(--secondary-color);
     font-size: 18px;
     line-height: 1;
 }
@@ -283,7 +287,7 @@ body {
 .event-title {
     font-size: 22px;
     font-weight: 800;
-    color: #f0d0b0;
+    color: var(--secondary-color);
     margin: 0 0 4px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -291,8 +295,71 @@ body {
 
 .event-sub {
     font-size: 12px;
-    color: #c08060;
+    color: var(--secondary-color);
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+}
+
+#media {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+}
+
+.outer-media {
+    position: relative;
+}
+
+.image {
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.media-container {
+    height: auto;
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-rows: 300px 300px;
+    grid-template-areas:
+        "box-1 box-2 box-3 box-4"
+        "box-1 box-5 box-6 box-7"
+}
+
+.section-break {
+    height: 140px;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.facebook-button {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: var(--box-shadow);
+    font-weight: 700;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.facebook-button:hover {
+    background-color: var(--primary-hover);
 }
