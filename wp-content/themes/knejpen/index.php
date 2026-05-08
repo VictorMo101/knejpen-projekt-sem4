@@ -65,7 +65,7 @@
             </div>
         </a>
 
-                <a href="#">
+        <a href="#">
             <div class="event-card">
                 <div class="event-img">
                     <img src="https://picsum.photos/500/500" alt="Venue photo" />
@@ -97,8 +97,16 @@
     </div>
 </section>
 
-<section id="about">
-    
+<section id="media">
+    <div class="media-container">
+        <div class="image" style="grid-area: box-1"><img src="https://picsum.photos/500/500" alt="Venue photo" /></div>
+        <div class="image" style="grid-area: box-2"><img src="https://picsum.photos/700/400" alt="Venue photo" /></div>
+        <div class="image" style="grid-area: box-3"><img src="https://picsum.photos/700/600" alt="Venue photo" /></div>
+        <div class="image" style="grid-area: box-4"><img src="https://picsum.photos/200/100" alt="Venue photo" /></div>
+        <div class="image" style="grid-area: box-5"><img src="https://picsum.photos/900/200" alt="Venue photo" /></div>
+        <div class="image" style="grid-area: box-6"><img src="https://picsum.photos/900/900" alt="Venue photo" /></div>
+        <div class="image" style="grid-area: box-7"><img src="https://picsum.photos/100/100" alt="Venue photo" /></div>
+    </div>
 </section>
 
 

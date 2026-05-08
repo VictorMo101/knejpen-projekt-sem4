@@ -119,6 +119,7 @@ body {
     background-color: #65191B;
     display: flex;
     margin: 0 auto;
+    padding: 20px;
     justify-content: center; 
     align-items: center;
 }
@@ -127,7 +128,7 @@ body {
     width: 50%;
     height: 100%;
     background-color: #65191B;
-    padding: 2.5rem;
+    padding: 2rem 2rem 2rem 0;
 }
 
 .about-text h2 {
@@ -144,7 +145,6 @@ body {
 }
 
 .about-image{
-    width: 30%;
     height: 70%;
     display: flex;
     justify-content: center;
@@ -295,4 +295,36 @@ body {
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+}
+
+#media {
+    width: 100%;
+    height: 100vh;
+    background-color:#65191B;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -24px 36px -30px #00000090, 0 24px 36px -30px #00000090;
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    background-color: blue;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.media-container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-rows: 300px 300px 300px 300px;
+    grid-template-areas:
+        "box-1 box-2 box-3 box-4"
+        "box-1 box-5 box-6 box-7"
 }
