@@ -16,5 +16,13 @@ function custom_theme_styles() {
         array(),
         null
     );
+
+    wp_enqueue_script(
+        'theme-scripts',
+        get_template_directory_uri() . '/main.js',
+        array(),
+        null,
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'custom_theme_styles');

@@ -1,5 +1,3 @@
-<?php wp_footer(); ?>
-
 <footer class="site-footer" id="contact">
 	<div class="footer-inner">
 
@@ -36,8 +34,9 @@
 	</div>
 
 	<div class="footer-bottom">
-		<span>© 2026 Knejpen. All rights reserved.</span>
+		<span>© <span id="year"></span> Knejpen. All rights reserved.</span>
 	</div>
 </footer>
+<?php wp_footer(); ?>
 </body>
 </html>
