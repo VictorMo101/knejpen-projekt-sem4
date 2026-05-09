@@ -30,7 +30,7 @@
 <section id="events" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="events-container">
         <span class="events-line"></span>
-            <h2>Events</h2>
+            <h2>Begivenheder</h2>
         <span class="events-line"></span>
         </div>
     </div>

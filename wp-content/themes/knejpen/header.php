@@ -8,8 +8,9 @@
     <a class="site-brand" href="<?php echo esc_url( home_url( '/#home' ) ); ?>">Knejpen</a>
 
     <nav class="site-nav" aria-label="Primary">
-        <a href="<?php echo esc_url( home_url( '/#home' ) ); ?>">Home</a>
-        <a href="<?php echo esc_url( home_url( '/#about' ) ); ?>">About</a>
-        <a href="<?php echo esc_url( home_url( '/#events' ) ); ?>">Events</a>
+        <a href="<?php echo esc_url( home_url( '/#home' ) ); ?>">Hjem</a>
+        <a href="<?php echo esc_url( home_url( '/#about' ) ); ?>">Om os</a>
+        <a href="<?php echo esc_url( home_url( '/#events' ) ); ?>">Begivenheder</a>
+        <a href="<?php echo esc_url( home_url( '/#media' ) ); ?>">Sociale Medier</a>
     </nav>
 </header>
