@@ -5,13 +5,13 @@
 
 		<div class="footer-visit">
 			<h3>Besøg os</h3>
-			<p>
-                Knejpen
-                <br>
-                Strandby Plads 4
-                <br>
-                6700 Esbjerg
-			</p>
+            <p>Knejpen</p>
+            <p>Strandby Plads 4</p>
+            <p>6700 Esbjerg</p>
+            <br>
+            <h3>Kontakt os</h3>
+            <p>Telefon: 75 12 34 56</p>
+            <p>Email: Knejpen@gmail.com</p>
 		</div>
 
 		<div class="footer-social">

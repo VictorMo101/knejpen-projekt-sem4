@@ -404,25 +404,24 @@ body {
 .footer-hours {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    letter-spacing: 0.03em;
 }
 
 .footer-time {
     display: flex;
     justify-content: space-between;
+        line-height: 1.7;
 }
 
 .footer-label {
     text-transform: uppercase;
 }
 
+.social-grid,
 .footer-visit,
 .footer-social {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
 }
 
 .site-footer h3 {
@@ -443,14 +442,14 @@ body {
 
 }
 
-.footer-visit p {
-    line-height: 1.7;
+.site-footer p {
+    font-size: 0.95rem;
 }
 
-.social-grid {
-    display: grid;
-    flex-direction: column;
-    gap: 10px;
+.social-grid,
+.footer-visit,
+.footer-social p {
+    line-height: 1.7;
 }
 
 .footer-bottom {
