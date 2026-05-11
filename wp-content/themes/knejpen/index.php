@@ -122,27 +122,50 @@
         <span class="events-line"></span>
 
         <div class="menu-card-grid">
-            <div class="menu-card-col">
-                <div class="menu-card-item">
-                    <p>ikon her</p>
-                    <div class="menu-item-dis">
-                        <p>drikke</p>
-                        <p>beskrivelse</p>
-                    </div>
-                    <p>pris</p>
-                </div>
-            </div>
+        
+          <?php
+        $args = array(
+            'post_type' => 'drinks',
+            'posts_per_page' => -1
+        );
 
-            <div class="menu-card-col">
-                <div class="menu-card-item">
-                    <p>ikon her</p>
-                    <div class="menu-item-dis">
-                        <p>drikke</p>
-                        <p>beskrivelse</p>
+        $menu_query = new WP_Query($args);
+
+        if($menu_query->have_posts()) :
+
+            while($menu_query->have_posts()) : $menu_query->the_post();
+
+                $icon = get_field('drinks-icon');
+                $title = get_field('drinks-titel');
+                $description = get_field('drinks-des');
+                $price = get_field('drinks-price');
+        ?>
+
+                <div class="menu-card-col">
+                    <div class="menu-card-item">
+
+                        <?php if($icon): ?>
+                            <img src="<?php echo esc_url($icon['url']); ?>"
+                                 alt="<?php echo esc_attr($icon['alt']); ?>">
+                        <?php endif; ?>
+
+                        <div class="menu-item-dis">
+                            <p><?php echo esc_html($title); ?></p>
+                            <p><?php echo esc_html($description); ?></p>
+                        </div>
+
+                        <p><?php echo esc_html($price); ?></p>
+
                     </div>
-                    <p>pris</p>
                 </div>
-            </div>
+
+        <?php
+            endwhile;
+
+            wp_reset_postdata();
+
+        endif;
+        ?>
         </div>
     </div>
 </section>
