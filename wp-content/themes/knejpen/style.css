@@ -315,6 +315,43 @@ body {
     position: relative;
 }
 
+#menu-card{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--box-shadow);
+    background-color: var(--primary-color);
+}
+
+.menu-card-container{
+    background-color: #7dd91a;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.menu-card-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.menu-card-col{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-card-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
 .image {
     overflow: hidden;
 }

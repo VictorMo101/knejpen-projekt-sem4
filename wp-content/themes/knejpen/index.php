@@ -115,7 +115,37 @@
 
 <section class="section-break" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
 
-<section id="about"></section>
+<section id="menu-card">
+    <div class="menu-card-container">
+        <span class="events-line"></span>
+        <h4>Menu Kort</h4>
+        <span class="events-line"></span>
+
+        <div class="menu-card-grid">
+            <div class="menu-card-col">
+                <div class="menu-card-item">
+                    <p>ikon her</p>
+                    <div class="menu-item-dis">
+                        <p>drikke</p>
+                        <p>beskrivelse</p>
+                    </div>
+                    <p>pris</p>
+                </div>
+            </div>
+
+            <div class="menu-card-col">
+                <div class="menu-card-item">
+                    <p>ikon her</p>
+                    <div class="menu-item-dis">
+                        <p>drikke</p>
+                        <p>beskrivelse</p>
+                    </div>
+                    <p>pris</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="section-break" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
 
