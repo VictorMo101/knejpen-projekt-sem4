@@ -1,11 +1,11 @@
 {
-    "key": "group_6a01cd4924756",
-    "title": "Drinkscard",
+    "key": "group_6a01dcabd421f",
+    "title": "øl og shots",
     "fields": [
         {
-            "key": "field_6a01cd49affe0",
-            "label": "drinks-icon",
-            "name": "drinks-icon",
+            "key": "field_6a01dcacffaab",
+            "label": "beer-shot-image",
+            "name": "beer-shot-image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -29,9 +29,9 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_6a01cdb2affe1",
-            "label": "drinks-titel",
-            "name": "drinks-titel",
+            "key": "field_6a01dccfd158a",
+            "label": "beer-shot-name",
+            "name": "beer-shot-name",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -50,30 +50,9 @@
             "append": ""
         },
         {
-            "key": "field_6a01cdf3affe2",
-            "label": "drinks-des",
-            "name": "drinks-des",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6a01ce05affe3",
-            "label": "drinks-price",
-            "name": "drinks-price",
+            "key": "field_6a01dcd5d158b",
+            "label": "beer-shot-price",
+            "name": "beer-shot-price",
             "aria-label": "",
             "type": "number",
             "instructions": "",
@@ -99,7 +78,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "drinks"
+                "value": "beer-shot"
             }
         ]
     ],
@@ -115,5 +94,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1778507104
+    "modified": 1778507009
 }
