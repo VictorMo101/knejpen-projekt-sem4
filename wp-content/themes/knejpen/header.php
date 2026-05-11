@@ -15,6 +15,7 @@
         <a href="<?php echo esc_url( home_url( '/#about' ) ); ?>">Om os</a>
         <a href="<?php echo esc_url( home_url( '/#events' ) ); ?>">Begivenheder</a>
         <a href="<?php echo esc_url( home_url( '/#media' ) ); ?>">Sociale Medier</a>
+        <a href="<?php echo esc_url( home_url( '/#menu' ) ); ?>">Menu</a>
     </nav>
     
 

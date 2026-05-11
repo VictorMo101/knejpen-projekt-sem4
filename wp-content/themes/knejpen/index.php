@@ -28,9 +28,9 @@
 
 <section id="events" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="events-container">
-        <span class="events-line"></span>
+        <span class="events-line"></span><p class="star">★</p>
             <h2>Begivenheder</h2>
-        <span class="events-line"></span>
+        <p class="star">★</p><span class="events-line"></span>
         </div>
     </div>
 
@@ -115,7 +115,107 @@
 
 <section class="section-break" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
 
-<section id="about"></section>
+<section id="menu">
+    <div class="menu-container">
+        <div class="corner-lt"></div>
+        <div class="corner-rt"></div>
+        <div class="corner-lb"></div>
+        <div class="corner-rb"></div>
+        <div class="menu-inner-border"></div>
+        <div class="corner-inner-lt"></div>
+        <div class="corner-inner-rt"></div>
+        <div class="corner-inner-lb"></div>
+        <div class="corner-inner-rb"></div>
+        <div class="menu-card-container">
+            <div class="menu-card-header">
+                <span class="events-line"></span><p class="star">★</p>
+                <?php $drinks_post_type = get_post_type_object('drinks'); ?>
+                <h2><?php echo esc_html($drinks_post_type ? $drinks_post_type->labels->name : 'Drinks'); ?></h2>
+                <p class="star">★</p><span class="events-line"></span>
+            </div>
+            <div class="menu-card-grid">
+            <?php
+            $args = array(
+                'post_type' => 'drinks',
+                'posts_per_page' => -1,
+            );
+            $menu_query = new WP_Query($args);
+
+            if($menu_query->have_posts()) :
+                while($menu_query->have_posts()) : $menu_query->the_post();
+
+                    $icon = get_field('drinks-icon');
+                    $title = get_field('drinks-titel');
+                    $description = get_field('drinks-des');
+                    $price = get_field('drinks-price');
+            ?>
+            <div class="menu-card-col">
+                <div class="menu-card-item">
+
+                    <?php if($icon): ?>
+                        <img class="menu-item-icon" src="<?php echo esc_url($icon['url']); ?>"
+                                alt="<?php echo esc_attr($icon['alt']); ?>">
+                    <?php endif; ?>
+
+                    <div class="menu-item-dis">
+                        <h3><?php echo esc_html($title); ?></h3>
+                        <p><?php echo esc_html($description); ?></p>
+                    </div>
+                    
+                    <p class="menu-item-price"><?php echo esc_html($price); ?>,-</p>
+
+                </div>
+            </div>
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            endif;
+            ?>
+        </div>
+        <div class="menu-card-header">
+            <span class="events-line"></span><p class="star">★</p>
+            <?php $drinks_post_type = get_post_type_object('beer-shot'); ?>
+            <h2><?php echo esc_html($drinks_post_type ? $drinks_post_type->labels->name : 'ØL & SHOTS'); ?></h2>
+            <p class="star">★</p><span class="events-line"></span>
+        </div>
+        <div class="menu-card-grid">
+        <?php
+        $args = array(
+            'post_type' => 'beer-shot',
+            'posts_per_page' => -1,
+        );
+        $menu_query = new WP_Query($args);
+
+        if($menu_query->have_posts()) :
+            while($menu_query->have_posts()) : $menu_query->the_post();
+
+                $beershoticon = get_field('beer-shot-image');
+                $beershottitle = get_field('beer-shot-name');
+                $beershotprice = get_field('beer-shot-price');
+        ?>
+        <div class="menu-card-col">
+            <div class="menu-card-item">
+
+                <?php if($beershoticon): ?>
+                    <img class="menu-item-icon" src="<?php echo esc_url($beershoticon['url']); ?>"
+                            alt="<?php echo esc_attr($beershoticon['alt']); ?>">
+                <?php endif; ?>
+
+                <div class="menu-item-dis">
+                    <h3><?php echo esc_html($beershottitle); ?></h3>
+                </div>
+
+                <p class="menu-item-price"><?php echo esc_html($beershotprice); ?>,-</p>
+
+            </div>
+        </div>
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        ?>
+    </div>
+</section>
 
 <section class="section-break" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
 
