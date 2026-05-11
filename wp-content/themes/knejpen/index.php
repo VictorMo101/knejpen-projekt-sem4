@@ -120,6 +120,11 @@
         <div class="corner-rt"></div>
         <div class="corner-lb"></div>
         <div class="corner-rb"></div>
+        <div class="menu-inner-border"></div>
+        <div class="corner-inner-lt"></div>
+        <div class="corner-inner-rt"></div>
+        <div class="corner-inner-lb"></div>
+        <div class="corner-inner-rb"></div>
     </div>
 </section>
 
