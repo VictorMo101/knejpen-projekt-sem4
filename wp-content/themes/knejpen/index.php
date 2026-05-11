@@ -147,6 +147,20 @@
     </div>
 </section>
 
+<section id="menu">
+    <div class="menu-container">
+        <div class="corner-lt"></div>
+        <div class="corner-rt"></div>
+        <div class="corner-lb"></div>
+        <div class="corner-rb"></div>
+        <div class="menu-inner-border"></div>
+        <div class="corner-inner-lt"></div>
+        <div class="corner-inner-rt"></div>
+        <div class="corner-inner-lb"></div>
+        <div class="corner-inner-rb"></div>
+    </div>
+</section>
+
 <section class="section-break" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
 
 <?php get_footer(); ?>
