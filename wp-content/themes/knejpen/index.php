@@ -117,16 +117,19 @@
 
 <section id="menu-card">
     <div class="menu-card-container">
-        <span class="events-line"></span>
-        <h4>Menu Kort</h4>
-        <span class="events-line"></span>
+        <div class="menu-card-header">
+            <span class="events-line"></span>
+            <?php $drinks_post_type = get_post_type_object('drinks'); ?>
+            <h4><?php echo esc_html($drinks_post_type ? $drinks_post_type->labels->name : 'Drinks'); ?></h4>
+            <span class="events-line"></span>
+    </div>
 
         <div class="menu-card-grid">
         
           <?php
         $args = array(
             'post_type' => 'drinks',
-            'posts_per_page' => -1
+            'posts_per_page' => -1,
         );
 
         $menu_query = new WP_Query($args);
@@ -145,7 +148,7 @@
                     <div class="menu-card-item">
 
                         <?php if($icon): ?>
-                            <img src="<?php echo esc_url($icon['url']); ?>"
+                            <img class="menu-item-icon" src="<?php echo esc_url($icon['url']); ?>"
                                  alt="<?php echo esc_attr($icon['alt']); ?>">
                         <?php endif; ?>
 
