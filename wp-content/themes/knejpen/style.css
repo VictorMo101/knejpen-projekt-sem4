@@ -382,9 +382,33 @@ body {
     height: 100%;
     margin: 0 auto;
     padding: 20px;
+    border: 5px solid var(--secondary-color);
 }
 
 .corner-lt {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-color);
+    border-bottom-right-radius: 999px;
+}
+
+.corner-lt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    border-right: 5px solid var(--secondary-color);
+    border-bottom: 5px solid var(--secondary-color);
+    border-bottom-right-radius: 999px;
+}
+
+.corner-lt::after {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -396,6 +420,29 @@ body {
 
 .corner-rt {
     position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-color);
+    border-bottom-left-radius: 999px;
+}
+
+.corner-rt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    border-left: 5px solid var(--secondary-color);
+    border-bottom: 5px solid var(--secondary-color);
+    border-bottom-left-radius: 999px;
+}
+
+.corner-rt::after {
+    content: '';
+    position: absolute;
     top: 0;
     right: 0;
     width: 60px;
@@ -406,6 +453,29 @@ body {
 
 .corner-lb {
     position: absolute;
+    bottom: -5px;
+    left: -5px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-color);
+    border-top-right-radius: 999px;
+}
+
+.corner-lb::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    border-right: 5px solid var(--secondary-color);
+    border-top: 5px solid var(--secondary-color);
+    border-top-right-radius: 999px;
+}
+
+.corner-lb::after {
+    content: '';
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 60px;
@@ -415,6 +485,29 @@ body {
 }
 
 .corner-rb {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-color);
+    border-top-left-radius: 999px;
+}
+
+.corner-rb::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    border-left: 5px solid var(--secondary-color);
+    border-top: 5px solid var(--secondary-color);
+    border-top-left-radius: 999px;
+}
+
+.corner-rb::after {
+    content: '';
     position: absolute;
     bottom: 0;
     right: 0;
