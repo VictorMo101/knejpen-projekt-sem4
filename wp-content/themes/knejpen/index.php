@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <section id="home">
     <div class="video-wrap">
         <video autoplay muted loop playsinline>
@@ -15,7 +14,7 @@
 <section id="about">
     <div class="about-container">
         <div class="about-text">
-        <h2>Bags and Bags</h2>
+        <h1>Knejpen gi'er</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unk sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.A
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unk sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.A </p>
         </div>
@@ -96,6 +95,8 @@
 
     </div>
 </section>
+
+<section class="section-break" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
 
 <section id="media">
     <div class="outer-media">
