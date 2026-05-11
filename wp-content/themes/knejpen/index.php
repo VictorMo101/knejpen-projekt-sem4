@@ -28,9 +28,9 @@
 
 <section id="events" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="events-container">
-        <span class="events-line"></span>
+        <span class="events-line"></span><p class="star">★</p>
             <h2>Begivenheder</h2>
-        <span class="events-line"></span>
+        <p class="star">★</p><span class="events-line"></span>
         </div>
     </div>
 
@@ -128,10 +128,10 @@
         <div class="corner-inner-rb"></div>
         <div class="menu-card-container">
             <div class="menu-card-header">
-                <span class="events-line"></span>
+                <span class="events-line"></span><p class="star">★</p>
                 <?php $drinks_post_type = get_post_type_object('drinks'); ?>
                 <h2><?php echo esc_html($drinks_post_type ? $drinks_post_type->labels->name : 'Drinks'); ?></h2>
-                <span class="events-line"></span>
+                <p class="star">★</p><span class="events-line"></span>
             </div>
             <div class="menu-card-grid">
             <?php
@@ -173,10 +173,10 @@
             ?>
         </div>
         <div class="menu-card-header">
-            <span class="events-line"></span>
+            <span class="events-line"></span><p class="star">★</p>
             <?php $drinks_post_type = get_post_type_object('beer-shot'); ?>
             <h2><?php echo esc_html($drinks_post_type ? $drinks_post_type->labels->name : 'ØL & SHOTS'); ?></h2>
-            <span class="events-line"></span>
+            <p class="star">★</p><span class="events-line"></span>
         </div>
         <div class="menu-card-grid">
         <?php

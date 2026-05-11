@@ -190,6 +190,12 @@ body {
     margin: 20px 0 20px 0;
 }
 
+.star {
+    color: var(--secondary-color);
+    font-size: 20px;
+    gap: 1px;
+}
+
 .events-wrapper {
     display: flex;
     gap: 20px;
