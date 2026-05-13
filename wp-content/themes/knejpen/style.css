@@ -190,6 +190,31 @@ body {
     margin: 20px 0 20px 0;
 }
 
+.event-img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2rem;
+    background-color: red;
+    display: flex;
+}
+
+.event-img-overlay img {
+    width: 10px;
+    height: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+.location-pin {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+
+}
+
 .star {
     color: var(--secondary-color);
     font-size: 20px;
@@ -228,13 +253,6 @@ body {
     position: relative;
     height: 240px;
     overflow: hidden;
-}
-
-.event-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
 }
 
 .badge {

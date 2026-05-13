@@ -39,15 +39,7 @@
             <div class="event-card">
                 <div class="event-img">
                     <img src="https://picsum.photos/500/500" alt="Venue photo" />
-                
-                    <div class="badge badge-left">
-                        <svg width="11" height="14" viewBox="0 0 11 14" fill="none" aria-hidden="true">
-                        <path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 9.5 4.5 9.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6.125A1.625 1.625 0 1 1 5.5 2.875a1.625 1.625 0 0 1 0 3.25z" fill="#e8cba0"/>
-                        </svg>
-                        Esbjerg
-                    </div>
-                
-                    <div class="badge badge-right">10kr - 100kr</div>
+                    <div class="event-img-overlay"><img src="<?php echo esc_url('https://knejpen-projekt.dk/wp-content/uploads/2026/05/wine-glass-svgrepo-com-11.png'); ?>" alt="location-pin">Kongensgade 19, 6700 Esbjerg</div>
                 </div>
         
                 <div class="event-body">
@@ -56,36 +48,6 @@
                         <span class="sep">|</span>
                         <span>KL 8 til KL 9</span>
                         <span class="sep">|</span>
-                        <span class="heart" aria-label="Saved">♥</span>
-                    </div>
-                    <div class="event-title">lorem ipsum </div>
-                    <div class="event-sub">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="event-card">
-                <div class="event-img">
-                    <img src="https://picsum.photos/500/500" alt="Venue photo" />
-                
-                    <div class="badge badge-left">
-                        <svg width="11" height="14" viewBox="0 0 11 14" fill="none" aria-hidden="true">
-                        <path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 9.5 4.5 9.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6.125A1.625 1.625 0 1 1 5.5 2.875a1.625 1.625 0 0 1 0 3.25z" fill="#e8cba0"/>
-                        </svg>
-                        Esbjerg
-                    </div>
-                
-                    <div class="badge badge-right">10kr - 100kr</div>
-                </div>
-        
-                <div class="event-body">
-                    <div class="event-meta">
-                        <span>June 6th 2016</span>
-                        <span class="sep">|</span>
-                        <span>KL 8 til KL 9</span>
-                        <span class="sep">|</span>
-                        <span class="heart" aria-label="Saved">♥</span>
                     </div>
                     <div class="event-title">lorem ipsum </div>
                     <div class="event-sub">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </div>
