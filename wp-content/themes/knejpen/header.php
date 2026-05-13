@@ -6,7 +6,7 @@
     <meta name="description" content="Knejpen, Esbjergs lokale bar">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body <?php body_class('has-fixed-header'); ?>>
+<body <?php body_class(); ?>>
 <header class="site-header" role="banner">
     <a class="site-brand" href="<?php echo esc_url( home_url( '/#home' ) ); ?>">Knejpen</a>
 
