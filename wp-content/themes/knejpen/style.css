@@ -4,7 +4,6 @@
     --box-shadow: 0 -24px 36px -30px #00000090, 0 24px 36px -30px #00000090;
     --primary-hover: #7A1F22;
     --primary-border-radius: 1rem;
-    --event-fade-width: 64px;
 }
 
 *{
@@ -216,6 +215,7 @@ body::-webkit-scrollbar {
     height: 2rem;
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
+    backdrop-filter: blur(12px);
 }
 
 .event-img-overlay svg {
