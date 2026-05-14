@@ -256,12 +256,12 @@ body::-webkit-scrollbar {
 
 .events-wrapper {
     display: flex;
-    gap: 1.25rem;
+    gap: 1.85rem;
     overflow-x: auto;
     scroll-behavior: smooth;
     width: 1200px;
     scroll-snap-type: x mandatory;
-    padding: 0;
+    padding: 24px 0 32px;
     -webkit-mask-image: none;
     mask-image: none;
     scrollbar-width: none;
@@ -285,7 +285,6 @@ body::-webkit-scrollbar {
     width: 380px;
     height: 380px;
     border-radius: var(--primary-border-radius);
-    overflow: hidden;
     background-color: var(--primary-color);
     box-shadow: var(--box-shadow);
     transition: all 0.3s ease-in-out;
