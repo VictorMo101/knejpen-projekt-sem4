@@ -92,12 +92,12 @@
     </div>
     
     <?php if ( $events_query->found_posts > 3 ) : ?>
-        <button class="events-scroll-btn events-scroll-btn-left" id="eventsScrollBtnLeft" aria-label="Scroll to previous events" style="display: none;">
+        <button class="events-scroll-btn events-scroll-btn-left is-hidden" id="eventsScrollBtnLeft" aria-label="Scroll to previous events">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
         </button>
-        <button class="events-scroll-btn events-scroll-btn-right" id="eventsScrollBtnRight" aria-label="Scroll to next events">
+        <button class="events-scroll-btn events-scroll-btn-right is-hidden" id="eventsScrollBtnRight" aria-label="Scroll to next events">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>

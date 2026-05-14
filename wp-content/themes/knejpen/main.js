@@ -61,16 +61,21 @@ if (eventsWrapper && eventsScrollBtnRight && eventsScrollBtnLeft) {
     const scrollLeft = eventsWrapper.scrollLeft;
     const scrollableWidth = eventsWrapper.scrollWidth - eventsWrapper.clientWidth;
     const edgeEpsilon = 2;
+    const canScrollLeft = scrollLeft > edgeEpsilon;
+    const canScrollRight = scrollLeft < scrollableWidth - edgeEpsilon;
 
     // Nothing to scroll: hide both buttons
     if (scrollableWidth <= edgeEpsilon) {
-      eventsScrollBtnLeft.style.display = 'none';
-      eventsScrollBtnRight.style.display = 'none';
+      eventsScrollBtnLeft.classList.add('is-hidden');
+      eventsScrollBtnRight.classList.add('is-hidden');
+      eventsWrapper.classList.remove('has-left-fade', 'has-right-fade');
       return;
     }
 
-    eventsScrollBtnLeft.style.display = scrollLeft <= edgeEpsilon ? 'none' : 'flex';
-    eventsScrollBtnRight.style.display = scrollLeft >= scrollableWidth - edgeEpsilon ? 'none' : 'flex';
+    eventsScrollBtnLeft.classList.toggle('is-hidden', !canScrollLeft);
+    eventsScrollBtnRight.classList.toggle('is-hidden', !canScrollRight);
+    eventsWrapper.classList.toggle('has-left-fade', canScrollLeft);
+    eventsWrapper.classList.toggle('has-right-fade', canScrollRight);
   };
 
   // Update buttons on manual scrolls, resize, and first load

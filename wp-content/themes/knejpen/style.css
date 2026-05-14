@@ -257,11 +257,25 @@ body::-webkit-scrollbar {
     scroll-behavior: smooth;
     width: 1200px;
     scroll-snap-type: x mandatory;
-
     padding: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+    scrollbar-width: none;
+}
+
+.events-wrapper.has-right-fade {
     -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 calc(100% - var(--event-fade-width)), transparent 100%);
     mask-image: linear-gradient(90deg, #000 0%, #000 calc(100% - var(--event-fade-width)), transparent 100%);
-    scrollbar-width: none;
+}
+
+.events-wrapper.has-left-fade {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 var(--event-fade-width), #000 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 var(--event-fade-width), #000 100%);
+}
+
+.events-wrapper.has-left-fade.has-right-fade {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 var(--event-fade-width), #000 calc(100% - var(--event-fade-width)), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 var(--event-fade-width), #000 calc(100% - var(--event-fade-width)), transparent 100%);
 }
 
 .events-wrapper::-webkit-scrollbar {
@@ -378,6 +392,11 @@ body::-webkit-scrollbar {
     opacity: 1;
 }
 
+.events-scroll-btn.is-hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
 .events-scroll-btn:hover {
     background-color: #ffffff;
     transform: scale(1.1);
@@ -390,13 +409,6 @@ body::-webkit-scrollbar {
 
 .events-scroll-btn-left {
     order: -1;
-    opacity: 0.3;
-    pointer-events: none;
-}
-
-.events-scroll-btn-left:not([style*="display: none"]) {
-    opacity: 1;
-    pointer-events: auto;
 }
 
 .events-scroll-btn-right {
