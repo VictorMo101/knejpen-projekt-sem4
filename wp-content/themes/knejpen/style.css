@@ -264,20 +264,7 @@ body::-webkit-scrollbar {
     scrollbar-width: none;
 }
 
-.events-wrapper.has-right-fade {
-    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 calc(100% - var(--event-fade-width)), transparent 100%);
-    mask-image: linear-gradient(90deg, #000 0%, #000 calc(100% - var(--event-fade-width)), transparent 100%);
-}
 
-.events-wrapper.has-left-fade {
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 var(--event-fade-width), #000 100%);
-    mask-image: linear-gradient(90deg, transparent 0%, #000 var(--event-fade-width), #000 100%);
-}
-
-.events-wrapper.has-left-fade.has-right-fade {
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 var(--event-fade-width), #000 calc(100% - var(--event-fade-width)), transparent 100%);
-    mask-image: linear-gradient(90deg, transparent 0%, #000 var(--event-fade-width), #000 calc(100% - var(--event-fade-width)), transparent 100%);
-}
 
 .events-wrapper::-webkit-scrollbar {
     display: none;
@@ -303,7 +290,7 @@ body::-webkit-scrollbar {
 }
 
 .event-card:hover {
-    transform: translateY(-4px);
+    transform: scale(0.99);
 }
 
 .event-img {

@@ -68,14 +68,11 @@ if (eventsWrapper && eventsScrollBtnRight && eventsScrollBtnLeft) {
     if (scrollableWidth <= edgeEpsilon) {
       eventsScrollBtnLeft.classList.add('is-hidden');
       eventsScrollBtnRight.classList.add('is-hidden');
-      eventsWrapper.classList.remove('has-left-fade', 'has-right-fade');
       return;
     }
 
     eventsScrollBtnLeft.classList.toggle('is-hidden', !canScrollLeft);
     eventsScrollBtnRight.classList.toggle('is-hidden', !canScrollRight);
-    eventsWrapper.classList.toggle('has-left-fade', canScrollLeft);
-    eventsWrapper.classList.toggle('has-right-fade', canScrollRight);
   };
 
   // Update buttons on manual scrolls, resize, and first load
