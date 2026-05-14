@@ -57,12 +57,12 @@
                             >
                         <?php endif; ?>
                         <div class="event-img-overlay">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={10} stroke="#FEF2A6" className="size-30" alt="Location Pin Icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#FEF2A6" class="size-30" aria-label="Location Pin Icon">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                             </svg>
                             <p class="event-place"><?php the_field('event-place'); ?></p>
-                            <svg class="event-external" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FEF2A6" className="size-6">
+                            <svg class="event-external" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#FEF2A6" class="size-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                             </svg>
 
@@ -92,12 +92,12 @@
     </div>
     
     <?php if ( $events_query->found_posts > 3 ) : ?>
-        <button class="events-scroll-btn events-scroll-btn-left" id="eventsScrollBtnLeft" aria-label="Scroll to previous events" style="display: none;">
+        <button class="events-scroll-btn events-scroll-btn-left is-hidden" id="eventsScrollBtnLeft" aria-label="Scroll to previous events">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
         </button>
-        <button class="events-scroll-btn events-scroll-btn-right" id="eventsScrollBtnRight" aria-label="Scroll to next events">
+        <button class="events-scroll-btn events-scroll-btn-right is-hidden" id="eventsScrollBtnRight" aria-label="Scroll to next events">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
@@ -111,7 +111,6 @@
 ?>
 </section>
 
-<section class="section-break" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
 
 <section id="media">
     <div class="outer-media">
