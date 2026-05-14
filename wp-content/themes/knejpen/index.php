@@ -18,7 +18,7 @@
         <p><?php echo wp_kses_post(get_field('about-description')); ?></p>
         </div>
         <div class="about-image">
-            <img src="https://picsum.photos/500/500" alt="test ong">
+            <img src="<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/IMG20260502172903-scaled.jpg'); ?>" alt="test ong">
         </div>
     </div>
 </section>

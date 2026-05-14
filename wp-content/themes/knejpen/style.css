@@ -115,10 +115,9 @@ body::-webkit-scrollbar {
 
 
 #about {
-  position: relative;
-  z-index: 2;
-      width: 100%;
-    max-height: 100vh;
+    position: relative;
+    z-index: 2;
+    width: 100%;
     background-color: var(--primary-color);
     z-index: 1;
     box-shadow: var(--box-shadow);
@@ -128,15 +127,14 @@ body::-webkit-scrollbar {
     max-width: 1200px;
     height: 100%;
     display: flex;
+    justify-content: space-between;
     margin: 0 auto;
-    padding: 3.5rem;
-    justify-content: center;
-    gap: 3rem;
+    padding: 3.5rem 0;
 }
 
 .about-text {
-    max-width: 600px;
-    width: 50%;
+    max-width: 34.5rem;
+    width: 100%;
 }
 
 .about-text h1 {
@@ -146,28 +144,31 @@ body::-webkit-scrollbar {
 
 .about-text p {
     color: var(--secondary-color); 
-    font-size: 20px;
-
+    font-size: clamp(1rem, 0.9rem + 0.6vw, 1.25rem);
+    padding-top: 1.5rem;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    max-width: 32rem;
 }
 
 .about-image{
-    height: 70%;
+    max-width: 34.5rem;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.6);
 }
 
 .about-image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    align-items: center;
 }
 
 #events {
     width: 100%;
-      z-index: 1;
+    z-index: 1;
     height: auto;
     padding: clamp(48px, 6vw, 96px) 0;
 }
