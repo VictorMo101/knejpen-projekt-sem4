@@ -129,23 +129,19 @@ body::-webkit-scrollbar {
     height: 100%;
     display: flex;
     margin: 0 auto;
-    padding: 20px;
+    padding: 3.5rem;
     justify-content: center;
-    align-items: center;
     gap: 3rem;
 }
 
 .about-text {
     max-width: 600px;
     width: 50%;
-    padding: 2rem 2rem 2rem 0;
 }
 
 .about-text h1 {
     color: var(--secondary-color);
     font-size: 48px;
-    margin-top: 3.5rem;
-    margin-bottom: 1rem;
 }
 
 .about-text p {
@@ -261,7 +257,6 @@ body::-webkit-scrollbar {
     scroll-behavior: smooth;
     width: 1200px;
     scroll-snap-type: x mandatory;
-    padding: 24px 0 32px;
     -webkit-mask-image: none;
     mask-image: none;
     scrollbar-width: none;

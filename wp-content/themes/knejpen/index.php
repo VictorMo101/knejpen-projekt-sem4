@@ -14,11 +14,9 @@
 <section id="about">
     <div class="about-container">
         <div class="about-text">
-        <h1>Knejpen gi'er</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unk sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.A
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unk sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.A </p>
+        <h1><?php echo esc_html(get_field('about-title')); ?></h1>
+        <p><?php echo wp_kses_post(get_field('about-description')); ?></p>
         </div>
-   
         <div class="about-image">
             <img src="https://picsum.photos/500/500" alt="test ong">
         </div>
