@@ -34,66 +34,81 @@
         </div>
     </div>
 
-    <div class="events-wrapper">
-        <a href="#">
-            <div class="event-card">
-                <div class="event-img">
-                    <img src="https://picsum.photos/500/500" alt="Venue photo" />
-                
-                    <div class="badge badge-left">
-                        <svg width="11" height="14" viewBox="0 0 11 14" fill="none" aria-hidden="true">
-                        <path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 9.5 4.5 9.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6.125A1.625 1.625 0 1 1 5.5 2.875a1.625 1.625 0 0 1 0 3.25z" fill="#e8cba0"/>
-                        </svg>
-                        Esbjerg
-                    </div>
-                
-                    <div class="badge badge-right">10kr - 100kr</div>
-                </div>
-        
-                <div class="event-body">
-                    <div class="event-meta">
-                        <span>June 6th 2016</span>
-                        <span class="sep">|</span>
-                        <span>KL 8 til KL 9</span>
-                        <span class="sep">|</span>
-                        <span class="heart" aria-label="Saved">♥</span>
-                    </div>
-                    <div class="event-title">lorem ipsum </div>
-                    <div class="event-sub">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </div>
-                </div>
-            </div>
-        </a>
+    <?php
+        $args = array(
+            'post_type'      => 'events',
+            'posts_per_page' => -1
+        );
+        $events_query = new WP_Query($args);
 
-        <a href="#">
-            <div class="event-card">
-                <div class="event-img">
-                    <img src="https://picsum.photos/500/500" alt="Venue photo" />
-                
-                    <div class="badge badge-left">
-                        <svg width="11" height="14" viewBox="0 0 11 14" fill="none" aria-hidden="true">
-                        <path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 9.5 4.5 9.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6.125A1.625 1.625 0 1 1 5.5 2.875a1.625 1.625 0 0 1 0 3.25z" fill="#e8cba0"/>
-                        </svg>
-                        Esbjerg
-                    </div>
-                
-                    <div class="badge badge-right">10kr - 100kr</div>
-                </div>
-        
-                <div class="event-body">
-                    <div class="event-meta">
-                        <span>June 6th 2016</span>
-                        <span class="sep">|</span>
-                        <span>KL 8 til KL 9</span>
-                        <span class="sep">|</span>
-                        <span class="heart" aria-label="Saved">♥</span>
-                    </div>
-                    <div class="event-title">lorem ipsum </div>
-                    <div class="event-sub">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </div>
-                </div>
-            </div>
-        </a>
+        if ( $events_query->have_posts() ) :
+        ?>
+<div class="events-carousel-wrapper">
+    <div class="events-wrapper" id="eventsWrapper">
+        <?php while ( $events_query->have_posts() ) : $events_query->the_post(); ?>
+            <?php $event_img = get_field('event-img'); ?>
+            <a href="<?php the_permalink(); ?>">
+                <div class="event-card">
+                    <div class="event-img">
+                        <?php if ( $event_img ) : ?>
+                            <img 
+                                src="<?php echo esc_url($event_img['url']); ?>" 
+                                alt="<?php echo esc_attr($event_img['alt']); ?>"
+                            >
+                        <?php endif; ?>
+                        <div class="event-img-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={10} stroke="#FEF2A6" className="size-30" alt="Location Pin Icon">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                            <p class="event-place"><?php the_field('event-place'); ?></p>
+                            <svg class="event-external" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FEF2A6" className="size-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                            </svg>
 
+                        </div>
+                    </div>
+
+                    <div class="event-body">
+                        <div class="event-meta">
+                            <span><?php the_field('event_date'); ?></span>
+                            <span class="sep">|</span>
+                            <span><?php the_field('event-time'); ?></span>
+                            <span class="sep">|</span>
+                            <span><?php the_field('event-price'); ?></span>
+                        </div>
+
+                        <div class="event-title">
+                            <?php the_field('event-title'); ?>
+                        </div>
+
+                        <div class="event-sub">
+                            <?php the_field('event-des'); ?>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        <?php endwhile; ?>
     </div>
+    
+    <?php if ( $events_query->found_posts > 3 ) : ?>
+        <button class="events-scroll-btn events-scroll-btn-left" id="eventsScrollBtnLeft" aria-label="Scroll to previous events" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <button class="events-scroll-btn events-scroll-btn-right" id="eventsScrollBtnRight" aria-label="Scroll to next events">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    <?php endif; ?>
+</div>
+
+<?php
+    wp_reset_postdata();
+    endif;
+?>
 </section>
 
 <section class="section-break" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
