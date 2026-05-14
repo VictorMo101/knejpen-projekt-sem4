@@ -45,7 +45,7 @@
     <div class="events-wrapper" id="eventsWrapper">
         <?php while ( $events_query->have_posts() ) : $events_query->the_post(); ?>
             <?php $event_img = get_field('event-img'); ?>
-            <a href="<?php the_permalink(); ?>">
+            <a href="<?php the_permalink(); ?>" target="_blank">
                 <div class="event-card">
                     <div class="event-img">
                         <?php if ( $event_img ) : ?>
