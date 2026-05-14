@@ -516,6 +516,7 @@ body::-webkit-scrollbar {
 
 .facebook-button {
     position: absolute;
+    display: flex;
     left: 50%;
     top: 100%;
     transform: translate(-50%, -50%);
@@ -533,6 +534,12 @@ body::-webkit-scrollbar {
 
 .facebook-button:hover {
     background-color: var(--primary-hover);
+}
+
+.facebook-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
 }
 
 #menu {
