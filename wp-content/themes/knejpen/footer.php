@@ -15,8 +15,8 @@
 		<div class="footer-social">
 			<h3>Følg os</h3>
 			<div class="social-grid">
-				<a href="#">Instagram</a>
-				<a href="#">Facebook</a>
+				<a href="https://www.instagram.com/pub_knejpen" target="_blank">Instagram</a>
+				<a href="https://www.facebook.com/pubknejpen" target="_blank">Facebook</a>
 			</div>
 		</div>
 

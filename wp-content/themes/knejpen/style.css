@@ -4,7 +4,6 @@
     --box-shadow: 0 -24px 36px -30px #00000090, 0 24px 36px -30px #00000090;
     --primary-hover: #7A1F22;
     --primary-border-radius: 1rem;
-    --event-fade-width: 64px;
 }
 
 *{
@@ -203,7 +202,7 @@ body::-webkit-scrollbar {
 .event-img > img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
 }
 
@@ -216,6 +215,7 @@ body::-webkit-scrollbar {
     height: 2rem;
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
+    backdrop-filter: blur(12px);
 }
 
 .event-img-overlay svg {
@@ -257,13 +257,12 @@ body::-webkit-scrollbar {
     overflow-x: auto;
     scroll-behavior: smooth;
     width: 1200px;
+    padding: 2rem 0;
     scroll-snap-type: x mandatory;
     -webkit-mask-image: none;
     mask-image: none;
     scrollbar-width: none;
 }
-
-
 
 .events-wrapper::-webkit-scrollbar {
     display: none;
@@ -516,12 +515,13 @@ body::-webkit-scrollbar {
 
 .facebook-button {
     position: absolute;
+    display: flex;
     left: 50%;
     top: 100%;
     transform: translate(-50%, -50%);
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    box-shadow: var(--box-shadow);
+    filter: drop-shadow(0 24px 36px rgba(0, 0, 0, 0.35));
     font-weight: 700;
     padding: 12px 24px;
     border: none;
@@ -533,6 +533,12 @@ body::-webkit-scrollbar {
 
 .facebook-button:hover {
     background-color: var(--primary-hover);
+}
+
+.facebook-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
 }
 
 #menu {
