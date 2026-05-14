@@ -115,13 +115,34 @@
 <section id="media">
     <div class="outer-media">
         <div class="media-container">
-            <div class="image" style="grid-area: box-1"><img src="https://picsum.photos/500/500" alt="Venue photo" /></div>
-            <div class="image" style="grid-area: box-2"><img src="https://picsum.photos/700/400" alt="Venue photo" /></div>
-            <div class="image" style="grid-area: box-3"><img src="https://picsum.photos/700/600" alt="Venue photo" /></div>
-            <div class="image" style="grid-area: box-4"><img src="https://picsum.photos/200/100" alt="Venue photo" /></div>
-            <div class="image" style="grid-area: box-5"><img src="https://picsum.photos/900/200" alt="Venue photo" /></div>
-            <div class="image" style="grid-area: box-6"><img src="https://picsum.photos/900/900" alt="Venue photo" /></div>
-            <div class="image" style="grid-area: box-7"><img src="https://picsum.photos/100/100" alt="Venue photo" /></div>
+            <?php
+            $areas = array('box-1', 'box-2', 'box-3', 'box-4', 'box-5', 'box-6', 'box-7');
+
+            $media_query = new WP_Query(array(
+                'post_type'      => 'media-image',
+                'posts_per_page' => 7,
+            ));
+
+            if ($media_query->have_posts()) :
+                $i = 0;
+                while ($media_query->have_posts()) : $media_query->the_post();
+                    if (!isset($areas[$i])) {
+                        break;
+                    }
+
+                    $image = get_field('image');
+                    if ($image) :
+            ?>
+                        <div class="image" style="grid-area: <?php echo esc_attr($areas[$i]); ?>">
+                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        </div>
+            <?php
+                    endif;
+                    $i++;
+                endwhile;
+                wp_reset_postdata();
+            endif;
+            ?>
         </div>
         <button class="facebook-button">Følg os på Facebook</button>
     </div>
