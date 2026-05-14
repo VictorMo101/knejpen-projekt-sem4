@@ -257,13 +257,12 @@ body::-webkit-scrollbar {
     overflow-x: auto;
     scroll-behavior: smooth;
     width: 1200px;
+    padding: 2rem 0;
     scroll-snap-type: x mandatory;
     -webkit-mask-image: none;
     mask-image: none;
     scrollbar-width: none;
 }
-
-
 
 .events-wrapper::-webkit-scrollbar {
     display: none;
