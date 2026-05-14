@@ -142,7 +142,7 @@
             endif;
             ?>
         </div>
-        <button class="facebook-button">Følg os på Facebook</button>
+        <a href="https://www.facebook.com/knejpen" class="facebook-button" target="_blank">Følg os på Facebook</a>
     </div>
 </section>
 
