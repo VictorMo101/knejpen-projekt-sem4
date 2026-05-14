@@ -115,7 +115,9 @@ body::-webkit-scrollbar {
 
 
 #about {
-    width: 100%;
+  position: relative;
+  z-index: 2;
+      width: 100%;
     max-height: 100vh;
     background-color: var(--primary-color);
     z-index: 1;
@@ -169,6 +171,7 @@ body::-webkit-scrollbar {
 
 #events {
     width: 100%;
+      z-index: 1;
     height: auto;
     padding: clamp(48px, 6vw, 96px) 0;
 }
@@ -253,12 +256,12 @@ body::-webkit-scrollbar {
 
 .events-wrapper {
     display: flex;
-    gap: 1.25rem;
+    gap: 1.85rem;
     overflow-x: auto;
     scroll-behavior: smooth;
     width: 1200px;
     scroll-snap-type: x mandatory;
-    padding: 0;
+    padding: 24px 0 32px;
     -webkit-mask-image: none;
     mask-image: none;
     scrollbar-width: none;
@@ -282,7 +285,6 @@ body::-webkit-scrollbar {
     width: 380px;
     height: 380px;
     border-radius: var(--primary-border-radius);
-    overflow: hidden;
     background-color: var(--primary-color);
     box-shadow: var(--box-shadow);
     transition: all 0.3s ease-in-out;
@@ -787,6 +789,7 @@ body::-webkit-scrollbar {
     background: var(--primary-color);
     color: var(--secondary-color);
     padding: 90px 24px 36px;
+    box-shadow: var(--box-shadow);
 }
 .footer-inner {
     max-width: 1200px;
