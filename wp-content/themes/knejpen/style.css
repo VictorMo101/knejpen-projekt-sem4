@@ -277,7 +277,7 @@ body::-webkit-scrollbar {
 
 
 .event-card {
-    width: 380px;
+    width: 460px;
     height: 380px;
     overflow: hidden;
     border-radius: var(--primary-border-radius);
