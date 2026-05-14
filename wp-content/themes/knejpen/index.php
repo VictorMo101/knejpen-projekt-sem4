@@ -111,7 +111,6 @@
 ?>
 </section>
 
-<section class="section-break" style="background-image: url('<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png'); ?>'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
 
 <section id="media">
     <div class="outer-media">

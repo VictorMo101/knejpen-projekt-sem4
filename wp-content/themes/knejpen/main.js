@@ -1,91 +1,83 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Scroll hide/reveal navbar
-  let lastScrollY = window.scrollY;
-  const navbar = document.querySelector('.site-header');
+// Scroll hide/reveal navbar
+let lastScrollY = window.scrollY;
+const navbar = document.querySelector('.site-header');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > lastScrollY) {
-      navbar.style.transform = 'translateY(-100%)';
-    } else {
-      navbar.style.transform = 'translateY(0)';
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY) {
+    navbar.style.transform = 'translateY(-100%)';
+  } else {
+    navbar.style.transform = 'translateY(0)';
+  }
+  navbar.style.transition = 'transform 0.3s';
+  lastScrollY = window.scrollY;
+});
+
+// Events carousel elements (wrapper holds the cards; buttons scroll it)
+const eventsWrapper = document.getElementById('eventsWrapper');
+const eventsScrollBtnLeft = document.getElementById('eventsScrollBtnLeft');
+const eventsScrollBtnRight = document.getElementById('eventsScrollBtnRight');
+
+if (eventsWrapper && eventsScrollBtnRight && eventsScrollBtnLeft) {
+  // Scroll by one card width plus the CSS gap
+  const getScrollStep = () => {
+    const card = eventsWrapper.querySelector('.event-card') || eventsWrapper.querySelector('a');
+    if (!card) {
+      return 0;
     }
-    navbar.style.transition = 'transform 0.3s';
-    lastScrollY = window.scrollY;
+
+    const cardWidth = card.getBoundingClientRect().width;
+    const styles = getComputedStyle(eventsWrapper);
+    const gap = parseFloat(styles.columnGap || styles.gap || 0);
+
+    return cardWidth + gap;
+  };
+
+  const scrollByStep = (direction) => {
+    const step = getScrollStep();
+    if (!step) {
+      return;
+    }
+
+    eventsWrapper.scrollBy({
+      left: step * direction,
+      behavior: 'smooth'
+    });
+  };
+
+  // Right button advances to the next card
+  eventsScrollBtnRight.addEventListener('click', () => {
+    scrollByStep(1);
   });
 
-  const eventsWrapper = document.getElementById('eventsWrapper');
-  const eventsScrollBtnLeft = document.getElementById('eventsScrollBtnLeft');
-  const eventsScrollBtnRight = document.getElementById('eventsScrollBtnRight');
+  // Left button goes to the previous card
+  eventsScrollBtnLeft.addEventListener('click', () => {
+    scrollByStep(-1);
+  });
 
-  if (eventsWrapper && eventsScrollBtnRight && eventsScrollBtnLeft) {
-    const cardWidth = 420; 
-    const gap = 20; 
-    const scrollDistance = cardWidth + gap; 
+  // Hide buttons when you cannot scroll further in that direction
+  const updateButtonVisibility = () => {
+    const scrollLeft = eventsWrapper.scrollLeft;
+    const scrollableWidth = eventsWrapper.scrollWidth - eventsWrapper.clientWidth;
+    const edgeEpsilon = 2;
 
-    // Get all event cards
-    const getEventCards = () => {
-      return Array.from(eventsWrapper.querySelectorAll('a'));
-    };
+    // Nothing to scroll: hide both buttons
+    if (scrollableWidth <= edgeEpsilon) {
+      eventsScrollBtnLeft.style.display = 'none';
+      eventsScrollBtnRight.style.display = 'none';
+      return;
+    }
 
-    // Get currently centered card index
-    const getCenteredCardIndex = () => {
-      const cards = getEventCards();
-      const scrollCenter = eventsWrapper.scrollLeft + eventsWrapper.clientWidth / 2;
-      
-      return cards.findIndex(card => {
-        const rect = card.getBoundingClientRect();
-        const cardCenter = rect.left + rect.width / 2 + eventsWrapper.scrollLeft - eventsWrapper.getBoundingClientRect().left;
-        return Math.abs(cardCenter - scrollCenter) < scrollDistance / 2;
-      });
-    };
+    eventsScrollBtnLeft.style.display = scrollLeft <= edgeEpsilon ? 'none' : 'flex';
+    eventsScrollBtnRight.style.display = scrollLeft >= scrollableWidth - edgeEpsilon ? 'none' : 'flex';
+  };
 
-    // Scroll to card at index
-    const scrollToCard = (index) => {
-      const cards = getEventCards();
-      if (cards[index]) {
-        cards[index].scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
-        });
-      }
-    };
+  // Update buttons on manual scrolls, resize, and first load
+  eventsWrapper.addEventListener('scroll', updateButtonVisibility);
+  window.addEventListener('resize', updateButtonVisibility);
 
-    eventsScrollBtnRight.addEventListener('click', () => {
-      const currentIndex = getCenteredCardIndex();
-      scrollToCard(currentIndex + 1);
-    });
-
-   
-    eventsScrollBtnLeft.addEventListener('click', () => {
-      const currentIndex = getCenteredCardIndex();
-      scrollToCard(currentIndex - 1);
-    });
-
-   
-    const updateButtonVisibility = () => {
-      const scrollLeft = eventsWrapper.scrollLeft;
-      
-    
-      if (scrollLeft <= 0) {
-        eventsScrollBtnLeft.style.display = 'none';
-      } else {
-        eventsScrollBtnLeft.style.display = 'flex';
-      }
-
-    
-      const scrollableWidth = eventsWrapper.scrollWidth - eventsWrapper.clientWidth;
-      if (scrollLeft >= scrollableWidth) {
-        eventsScrollBtnRight.style.display = 'none';
-      } else {
-        eventsScrollBtnRight.style.display = 'flex';
-      }
-    };
-
-    eventsWrapper.addEventListener('scroll', updateButtonVisibility);
-  
-    updateButtonVisibility();
-  }
+  updateButtonVisibility();
+}
 
 
