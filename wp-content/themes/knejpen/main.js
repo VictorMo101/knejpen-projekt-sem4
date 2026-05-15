@@ -82,4 +82,10 @@ if (eventsWrapper && eventsScrollBtnRight && eventsScrollBtnLeft) {
   updateButtonVisibility();
 }
 
+const burger = document.querySelector(".burger-btn");
+const nav = document.querySelector(".site-nav");
+
+burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+}); 
 
