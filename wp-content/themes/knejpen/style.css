@@ -180,6 +180,7 @@ body::-webkit-scrollbar {
 
 .events-container {
     max-width: 1200px;
+    width: 100%;
     display: flex;
     align-items: center;  
     justify-content: center;
@@ -194,6 +195,8 @@ body::-webkit-scrollbar {
 }
 
 .events-line {
+    max-width: 1200px;
+    width: 100%;
     flex: 1;
     height: 2px;
     background-color: var(--secondary-color);
@@ -241,9 +244,8 @@ body::-webkit-scrollbar {
 
 .star {
     color: var(--secondary-color);
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
-    gap: 1px;
 }
 
 .events-carousel-wrapper {
@@ -251,7 +253,7 @@ body::-webkit-scrollbar {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 80px;
+    padding: 80px 20px 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -925,6 +927,10 @@ body::-webkit-scrollbar {
     .footer-logo {
         display: none;
     }
+
+    .events-container {
+        padding: 0 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -993,7 +999,9 @@ body::-webkit-scrollbar {
     }
 
     .about-container {
+        display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 
@@ -1001,12 +1009,9 @@ body::-webkit-scrollbar {
         order: -1;
     }
 
+
     .events-container {
         flex-direction: grid;
-    }
-
-    .events-container span {
-        display: none;
     }
 
     .events-carousel-wrapper {
@@ -1052,6 +1057,10 @@ body::-webkit-scrollbar {
     }
 }
 
+@media(max-width: 645px) {
+
+}
+
 @media(max-width: 425px) {
     .media-container {
         height: 300px;
@@ -1072,6 +1081,10 @@ body::-webkit-scrollbar {
 
     .about-text p {
         font-size: 1.2rem;
+    }
+
+    .events-line {
+        display: none;
     }
 
   .footer-inner {
