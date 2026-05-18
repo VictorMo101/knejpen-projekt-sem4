@@ -42,6 +42,22 @@ window.addEventListener('scroll', () => {
   lastScrollY = window.scrollY;
 });
 
+// Scroll-up indicator: show after leaving the hero section
+const scrollUpIndicator = document.querySelector('.scroll-up-indicator');
+const heroSection = document.getElementById('home');
+
+if (scrollUpIndicator && heroSection) {
+  const heroObserver = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      scrollUpIndicator.classList.toggle('is-visible', !entry.isIntersecting);
+    },
+    { root: null, threshold: 0 }
+  );
+
+  heroObserver.observe(heroSection);
+}
+
 // Events carousel elements (wrapper holds the cards; buttons scroll it)
 const eventsWrapper = document.getElementById('eventsWrapper');
 const eventsScrollBtnLeft = document.getElementById('eventsScrollBtnLeft');

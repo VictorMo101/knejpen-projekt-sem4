@@ -144,6 +144,44 @@ body::-webkit-scrollbar {
     height: 26px;
 }
 
+.scroll-up-indicator {
+    position: fixed;
+    display: none;
+    right: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    z-index: 1001;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.scroll-up-indicator.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.scroll-up-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    animation: scroll-up-float 1.8s ease-in-out infinite;
+}
+
+.scroll-up-icon {
+    width: 22px;
+    height: 22px;
+    transform: rotate(180deg);
+}
+
 @keyframes hero-float {
     0%,
     100% {
@@ -954,6 +992,10 @@ body::-webkit-scrollbar {
     .hero-scroll-indicator {
         display: block;
     }
+
+    .scroll-up-indicator {
+        display: block;
+}
     
     .section-break {
         background-image: url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png') !important;
