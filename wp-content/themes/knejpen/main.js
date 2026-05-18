@@ -1,10 +1,16 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Scroll hide/reveal navbar
+const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
 let lastScrollY = window.scrollY;
 const navbar = document.querySelector('.site-header');
 
 window.addEventListener('scroll', () => {
+  if (isMobile()) {
+    navbar.style.transform = 'translateY(0)';
+    return;
+  }
+
   if (window.scrollY > lastScrollY) {
     navbar.style.transform = 'translateY(-100%)';
   } else {
@@ -82,4 +88,17 @@ if (eventsWrapper && eventsScrollBtnRight && eventsScrollBtnLeft) {
   updateButtonVisibility();
 }
 
+const burger = document.querySelector(".burger-btn");
+const nav = document.querySelector(".phone-nav");
+const navButtons = document.querySelectorAll(".phone-nav a");
 
+burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+}); 
+
+// Iterate over each nav button and attach a click listener that removes the "active" class from nav, closing the menu
+navButtons.forEach((link ) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
+});
