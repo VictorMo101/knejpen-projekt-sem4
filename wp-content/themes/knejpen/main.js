@@ -14,18 +14,18 @@ window.addEventListener('scroll', () => {
   lastScrollY = window.scrollY;
 });
 
-// Events carousel elements (wrapper holds the cards; buttons scroll it)
+// Events carousel elements
 const eventsWrapper = document.getElementById('eventsWrapper');
 const eventsScrollBtnLeft = document.getElementById('eventsScrollBtnLeft');
 const eventsScrollBtnRight = document.getElementById('eventsScrollBtnRight');
 
+const isMobile = () => window.innerWidth <= 1023;
+
 if (eventsWrapper && eventsScrollBtnRight && eventsScrollBtnLeft) {
-  // Scroll by one card width plus the CSS gap
+
   const getScrollStep = () => {
     const card = eventsWrapper.querySelector('.event-card') || eventsWrapper.querySelector('a');
-    if (!card) {
-      return 0;
-    }
+    if (!card) return 0;
 
     const cardWidth = card.getBoundingClientRect().width;
     const styles = getComputedStyle(eventsWrapper);
@@ -35,10 +35,10 @@ if (eventsWrapper && eventsScrollBtnRight && eventsScrollBtnLeft) {
   };
 
   const scrollByStep = (direction) => {
+    if (isMobile()) return; // disable carousel on very small screens
+
     const step = getScrollStep();
-    if (!step) {
-      return;
-    }
+    if (!step) return;
 
     eventsWrapper.scrollBy({
       left: step * direction,
@@ -46,25 +46,21 @@ if (eventsWrapper && eventsScrollBtnRight && eventsScrollBtnLeft) {
     });
   };
 
-  // Right button advances to the next card
-  eventsScrollBtnRight.addEventListener('click', () => {
-    scrollByStep(1);
-  });
-
-  // Left button goes to the previous card
-  eventsScrollBtnLeft.addEventListener('click', () => {
-    scrollByStep(-1);
-  });
-
-  // Hide buttons when you cannot scroll further in that direction
   const updateButtonVisibility = () => {
+    // mobil
+    if (isMobile()) {
+      eventsScrollBtnLeft.classList.add('is-hidden');
+      eventsScrollBtnRight.classList.add('is-hidden');
+      return;
+    }
+
     const scrollLeft = eventsWrapper.scrollLeft;
     const scrollableWidth = eventsWrapper.scrollWidth - eventsWrapper.clientWidth;
     const edgeEpsilon = 2;
+
     const canScrollLeft = scrollLeft > edgeEpsilon;
     const canScrollRight = scrollLeft < scrollableWidth - edgeEpsilon;
 
-    // Nothing to scroll: hide both buttons
     if (scrollableWidth <= edgeEpsilon) {
       eventsScrollBtnLeft.classList.add('is-hidden');
       eventsScrollBtnRight.classList.add('is-hidden');
@@ -75,17 +71,21 @@ if (eventsWrapper && eventsScrollBtnRight && eventsScrollBtnLeft) {
     eventsScrollBtnRight.classList.toggle('is-hidden', !canScrollRight);
   };
 
-  // Update buttons on manual scrolls, resize, and first load
+  eventsScrollBtnRight.addEventListener('click', () => scrollByStep(1));
+  eventsScrollBtnLeft.addEventListener('click', () => scrollByStep(-1));
+
   eventsWrapper.addEventListener('scroll', updateButtonVisibility);
   window.addEventListener('resize', updateButtonVisibility);
 
   updateButtonVisibility();
 }
 
+// Burger menu for mobile/tablet
 const burger = document.querySelector(".burger-btn");
 const nav = document.querySelector(".site-nav");
 
-burger.addEventListener("click", () => {
+if (burger && nav) {
+  burger.addEventListener("click", () => {
     nav.classList.toggle("active");
-}); 
-
+  });
+}

@@ -895,7 +895,6 @@ body::-webkit-scrollbar {
 @media (min-width: 320px) {
     
      .site-header {
-        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -983,10 +982,10 @@ body::-webkit-scrollbar {
     .media-container {
     display: grid;
     grid-template-columns: 160px 160px;
-    grid-template-rows: 200px 200px;
+    grid-template-rows: 160px 160px;
     grid-template-areas:
         "box-1 box-2"
-        "box-1 box-3";
+        "box-1 box-3"
     }
 
     .facebook-icon {
@@ -1026,10 +1025,124 @@ body::-webkit-scrollbar {
 
     .footer-brand img{
         width: 270px;
-        height: 230px;
+        height: 217px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+    }
+}
+
+@media (min-width: 768px) {
+
+
+    .about-container {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .about-text{
+        width: 50%;
+    }
+
+    .media-container {
+    display: grid;
+    grid-template-columns: 256px 256px 256px;
+    grid-template-rows: 200px 200px;
+    grid-template-areas:
+        "box-1 box-2 box-4"
+        "box-1 box-3 box-5";
+    }
+
+    .events-container span {
+        display: block;
+    }
+
+    .events-container h2{
+        font-size: 28px;
+    }
+
+    .facebook-button {
+        align-items: center;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .site-nav {
+        display: none;
+        display: hidden;
+    }
+}
+
+@media (min-width: 1024px) {
+    
+    .burger-btn {
+        display: none;
+    }
+
+    .site-nav {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        display: block;
+    }
+
+    .site-nav.active {
+        display: flex;
+    }
+
+    .about-container {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .about-text {
+        width: 50%;
+    }
+
+    .about-text h1 {
+        font-size: 48px;
+    }
+
+    .about-text p {
+        font-size: 1.5rem;
+    }
+
+    .media-container {
+        display: grid;
+        grid-template-columns: 256px 256px 256px 256px;
+        grid-template-rows: 300px 300px;
+        grid-template-areas:
+            "box-1 box-2 box-4 box-6"
+            "box-1 box-3 box-5 box-7";
+    }
+
+    .facebook-button {
+        font-size: 30px;
+    }
+
+    .events-container h2 {
+        font-size: 30px;
+    }
+
+    .events-wrapper {
+        width: 1200px;
+    }
+
+    .menu-card-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
