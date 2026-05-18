@@ -892,9 +892,21 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 
-@media (min-width: 320px) {
+.desktop-nav {
+    display: block;
+}
+
+.phone-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
     
-     .site-header {
+    .desktop-nav {
+        display: none;
+    }
+
+    .site-header {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -916,11 +928,15 @@ body::-webkit-scrollbar {
         cursor: pointer;
     }
 
+    .phone-nav {
+        display: none;
+    }
+
     .site-nav a {
         display: none;
     }
 
-    .site-nav.active {
+    .phone-nav.active {
         position: absolute;
         top: 100%;
         right: 0;
@@ -934,12 +950,13 @@ body::-webkit-scrollbar {
         gap: 1rem;
     }
 
-    .site-nav.active a {
+    .phone-nav.active a {
         display: block;
         width: 100%;
         text-align: left;
         padding: 0.5rem 1.5rem;
     }
+
     .about-container {
         flex-direction: column;
         align-items: center;
@@ -966,7 +983,7 @@ body::-webkit-scrollbar {
     .events-container {
         flex-direction: grid;
     }
-    
+
     .events-container span {
         display: none;
     }
@@ -980,14 +997,17 @@ body::-webkit-scrollbar {
         width: 100%;
     }
 
-    .media-container {
-    display: grid;
-    grid-template-columns: 160px 160px;
-    grid-template-rows: 200px 200px;
+  .media-container {
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(2, 200px);
     grid-template-areas:
-        "box-1 box-2"
-        "box-1 box-3";
-    }
+      "box-1 box-2 box-3"
+      "box-4 box-5 box-6";
+  }
+
+  .media-container .image:nth-child(7) {
+    display: none;
+  }
 
     .facebook-icon {
     width: 40px;
@@ -1032,4 +1052,32 @@ body::-webkit-scrollbar {
         justify-content: space-evenly;
         align-items: center;
     }
+    }
+
+@media(max-width: 640px) {
+    .media-container {
+        grid-template-columns: repeat(2, 200px);
+        grid-template-rows: repeat(2, 200px);
+        grid-template-areas:
+            "box-1 box-2"
+            "box-3 box-4";
+    }
+
+    .media-container .image:nth-child(n+5) {
+    display: none;
+  }
+}
+
+@media(max-width: 440px) {
+    .media-container {
+        grid-template-columns: repeat(2, 140px);
+        grid-template-rows: repeat(2, 140px);
+        grid-template-areas:
+            "box-1 box-2"
+            "box-3 box-4";
+    }
+
+    .media-container .image:nth-child(n+5) {
+    display: none;
+  }
 }

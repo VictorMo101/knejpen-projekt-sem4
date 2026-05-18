@@ -11,22 +11,20 @@
     <a class="site-brand" href="<?php echo esc_url( home_url( '/#home' ) ); ?>">Knejpen</a>
 
     <nav class="site-nav" aria-label="Primary">
-        <a href="<?php echo esc_url( home_url( '/#home' ) ); ?>">Hjem</a>
-        <a href="<?php echo esc_url( home_url( '/#about' ) ); ?>">Om os</a>
-        <a href="<?php echo esc_url( home_url( '/#events' ) ); ?>">Begivenheder</a>
-        <a href="<?php echo esc_url( home_url( '/#media' ) ); ?>">Sociale Medier</a>
-        <a href="<?php echo esc_url( home_url( '/#menu' ) ); ?>">Menu</a>
-    </nav>
-
-    <nav class="site-nav" aria-label="Primary">
-
-    <button class="burger-btn">☰</button>
-
-    <a href="<?php echo esc_url( home_url( '/#home' ) ); ?>">Hjem</a>
-    <a href="<?php echo esc_url( home_url( '/#about' ) ); ?>">Om os</a>
-    <a href="<?php echo esc_url( home_url( '/#events' ) ); ?>">Begivenheder</a>
-    <a href="<?php echo esc_url( home_url( '/#media' ) ); ?>">Sociale Medier</a>
-    <a href="<?php echo esc_url( home_url( '/#menu' ) ); ?>">Menu</a>
-
+        <div class="desktop-nav">
+            <a href="<?php echo esc_url( home_url( '/#home' ) ); ?>">Hjem</a>
+            <a href="<?php echo esc_url( home_url( '/#about' ) ); ?>">Om os</a>
+            <a href="<?php echo esc_url( home_url( '/#events' ) ); ?>">Begivenheder</a>
+            <a href="<?php echo esc_url( home_url( '/#media' ) ); ?>">Sociale Medier</a>
+            <a href="<?php echo esc_url( home_url( '/#menu' ) ); ?>">Menu</a>
+        </div>
+        <button class="burger-btn">☰</button>
+        <div class="phone-nav">
+            <a href="<?php echo esc_url( home_url( '/#home' ) ); ?>">Hjem</a>
+            <a href="<?php echo esc_url( home_url( '/#about' ) ); ?>">Om os</a>
+            <a href="<?php echo esc_url( home_url( '/#events' ) ); ?>">Begivenheder</a>
+            <a href="<?php echo esc_url( home_url( '/#media' ) ); ?>">Sociale Medier</a>
+            <a href="<?php echo esc_url( home_url( '/#menu' ) ); ?>">Menu</a>
+        </div>
     </nav>
 </header>
