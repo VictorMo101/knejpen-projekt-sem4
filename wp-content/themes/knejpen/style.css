@@ -53,7 +53,6 @@ body::-webkit-scrollbar {
 .site-nav {
     display: flex;
     align-items: center;
-    gap: 2rem;
     flex-wrap: wrap;
 }
 
@@ -474,7 +473,6 @@ body::-webkit-scrollbar {
 
 .menu-item-price{
     margin-left: auto;
-    white-space: nowrap;
 }
 
 .menu-card-item h3 {
@@ -911,7 +909,8 @@ body::-webkit-scrollbar {
 }
 
 .desktop-nav {
-    display: block;
+    display: flex;
+    gap: 2rem;
 }
 
 .phone-nav {
@@ -982,11 +981,9 @@ body::-webkit-scrollbar {
         top: 100%;
         right: 0;
         width: 100%;
-        background: rgba(20, 20, 20, 0.4);
-        backdrop-filter: blur(12px);
+        background: #00000090;
         display: flex;
         flex-direction: column;
-        align-items: center;
         padding: 1rem 0;
         gap: 1rem;
     }
@@ -1039,22 +1036,6 @@ body::-webkit-scrollbar {
     .menu-card-grid {
         grid-template-columns: 1fr;
     }
-
-    .menu-container{
-    padding: 1.8rem;
-    }
-
-    .menu-card-item{
-        gap: 10px;
-    }
-
-    .menu-item-dis h3{
-        font-size: 18px;
-    }
-
-    .menu-item-price{
-        font-size: 22px;
-    }
 }
 
 @media(max-width: 645px) {
@@ -1089,6 +1070,22 @@ body::-webkit-scrollbar {
             "box-3 box-4";
     }
 
+    .menu-card-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--secondary-color);
+    }
+
+    .menu-item-price{
+        margin: auto;
+    }
+
+    .menu-item-dis{
+        text-align: center;
+    }
+
     .media-container .image:nth-child(n+5) {
         display: none;
     }
@@ -1108,19 +1105,13 @@ body::-webkit-scrollbar {
   .footer-inner {
     display: grid;
     grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .footer-inner > * {
-    align-items: center;
-  }
+    }
 }
 
 @media(max-width: 380px) {
     .events-scroll-btn {
         height: 50px;
         width: 15px;
-        border-radius: 0%;
+        border-radius: var(--primary-border-radius);
     }
 }
