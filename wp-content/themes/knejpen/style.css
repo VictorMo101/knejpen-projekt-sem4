@@ -179,10 +179,7 @@ body::-webkit-scrollbar {
 
 #events,
 .section-break {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: clamp(900px, 100vw, 1400px) auto;
-    background-attachment: scroll;
+    background-size: clamp(600px, 100vw, 1200px) auto;
 }
 
 .events-container {
@@ -1026,8 +1023,30 @@ body::-webkit-scrollbar {
 
 @media(max-width: 645px) {
     .event-card {
-        width: 300px;
         height: auto;
+    }
+
+    .events-carousel-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "track track"
+            "left right";
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .events-wrapper {
+        grid-area: track;
+    }
+
+    .events-scroll-btn-left {
+        grid-area: left;
+        justify-self: end;
+    }
+
+    .events-scroll-btn-right {
+        grid-area: right;
     }
 
     .event-img-overlay {
@@ -1039,14 +1058,14 @@ body::-webkit-scrollbar {
         hyphens: auto;
     }
 
-    .event-img {
-        margin-bottom: -1px;
+    .event-img-overlay {
+        margin-bottom: -2px;
     }
 }
 
-@media(max-width: 480px) {
+@media(max-width: 500px) {
     .event-card {
-        width: 200px;
+        width: 385px;
     }
 }
 
@@ -1058,6 +1077,10 @@ body::-webkit-scrollbar {
         grid-template-areas:
             "box-1 box-2"
             "box-3 box-4";
+    }
+
+    .event-card {
+        width: 340px;
     }
 
     .menu-card-item {
@@ -1103,9 +1126,7 @@ body::-webkit-scrollbar {
 }
 
 @media(max-width: 380px) {
-    .events-scroll-btn {
-        height: 50px;
-        width: 15px;
-        border-radius: var(--primary-border-radius);
+    .event-card {
+        width: 280px;
     }
 }

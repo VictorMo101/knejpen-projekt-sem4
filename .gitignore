@@ -12,6 +12,7 @@ wp-content/cache/
 wp-content/upgrade/
 wp-content/backup-db/
 wp-content/uploads/
+wp-content/mu-plugins/
 
 # Config with secrets
 wp-config.php
