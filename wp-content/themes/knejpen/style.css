@@ -1058,7 +1058,25 @@ body::-webkit-scrollbar {
 }
 
 @media(max-width: 645px) {
+    .event-card {
+        width: 300px;
+        height: auto;
+    }
 
+    .event-img-overlay {
+        height: 3rem;
+    }
+
+    .event-meta {
+        word-break: normal;
+        hyphens: auto;
+    }
+}
+
+@media(max-width: 480px) {
+    .event-card {
+        width: 200px;
+    }
 }
 
 @media(max-width: 425px) {
@@ -1097,4 +1115,12 @@ body::-webkit-scrollbar {
   .footer-inner > * {
     align-items: center;
   }
+}
+
+@media(max-width: 380px) {
+    .events-scroll-btn {
+        height: 50px;
+        width: 15px;
+        border-radius: 0%;
+    }
 }
