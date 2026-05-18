@@ -8,6 +8,14 @@
         <div class="video-overlay">
             <img src="<?php echo esc_url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-hero-billede.png'); ?>" alt="Knejpen Logo">
         </div>
+
+        <div class="hero-scroll-indicator">
+            <a href="#about" class="hero-scroll-link" aria-label="Scroll to about section">
+                <svg class="hero-scroll-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                    <path fill="currentColor" d="M12 16.5 5 9.5l1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
+                </svg>
+            </a>
+        </div>
     </div>
 </section>
 

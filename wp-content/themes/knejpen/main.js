@@ -1,16 +1,38 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Scroll hide/reveal navbar
-const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
-let lastScrollY = window.scrollY;
+// Scroll hide/reveal navbar (only on manual scrolling)
 const navbar = document.querySelector('.site-header');
+let lastScrollY = window.scrollY;
+let isManualScroll = false; // Only true right after user input (not programmatic scrolls)
+let manualScrollTimeoutId = null; // Clears the manual scroll flag after a short pause
+
+const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
+const markManualScroll = () => {
+  // Mark this as user-initiated scrolling (wheel)
+  isManualScroll = true;
+
+  if (manualScrollTimeoutId) {
+    clearTimeout(manualScrollTimeoutId);
+  }
+
+  manualScrollTimeoutId = setTimeout(() => {
+    // Reset after input stops so smooth scroll won't hide the navbar
+    isManualScroll = false;
+  }, 200);
+};
+
+// Manual scroll signals
+window.addEventListener('wheel', markManualScroll);
 
 window.addEventListener('scroll', () => {
-  if (isMobile()) {
+  // Keep navbar visible on mobile or when scroll wasn't user-initiated
+  if (isMobile() || !isManualScroll) {
     navbar.style.transform = 'translateY(0)';
     return;
   }
 
+  // Hide on downward scroll, show on upward scroll
   if (window.scrollY > lastScrollY) {
     navbar.style.transform = 'translateY(-100%)';
   } else {
@@ -19,6 +41,22 @@ window.addEventListener('scroll', () => {
   navbar.style.transition = 'transform 0.3s';
   lastScrollY = window.scrollY;
 });
+
+// Scroll-up indicator: show after leaving the hero section
+const scrollUpIndicator = document.querySelector('.scroll-up-indicator');
+const heroSection = document.getElementById('home');
+
+if (scrollUpIndicator && heroSection) {
+  const heroObserver = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      scrollUpIndicator.classList.toggle('is-visible', !entry.isIntersecting);
+    },
+    { root: null, threshold: 0 }
+  );
+
+  heroObserver.observe(heroSection);
+}
 
 // Events carousel elements (wrapper holds the cards; buttons scroll it)
 const eventsWrapper = document.getElementById('eventsWrapper');
