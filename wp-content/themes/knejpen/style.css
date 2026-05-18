@@ -115,6 +115,45 @@ body::-webkit-scrollbar {
     height: auto;
 }
 
+.hero-scroll-indicator {
+    position: absolute;
+    left: 50%;
+    bottom: 150px;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: none;
+    pointer-events: auto;
+}
+
+.hero-scroll-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    animation: hero-float 1.6s ease-in-out infinite;
+}
+
+.hero-scroll-icon {
+    width: 26px;
+    height: 26px;
+}
+
+@keyframes hero-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(6px);
+    }
+}
+
 
 #about {
     position: relative;
@@ -911,6 +950,10 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 768px) {
+
+    .hero-scroll-indicator {
+        display: block;
+    }
     
     .section-break {
         background-image: url('http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-background.png') !important;
