@@ -121,6 +121,7 @@ body::-webkit-scrollbar {
     position: relative;
     z-index: 2;
     width: 100%;
+    padding: 0 20px;
     background-color: var(--primary-color);
     z-index: 1;
     box-shadow: var(--box-shadow);
@@ -133,6 +134,7 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     margin: 0 auto;
     padding: 3.5rem 0;
+    gap: 4rem;
 }
 
 .about-text {
@@ -533,6 +535,7 @@ body::-webkit-scrollbar {
     display: flex;
     left: 50%;
     top: 100%;
+    width: 240px;
     transform: translate(-50%, -50%);
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -544,6 +547,7 @@ body::-webkit-scrollbar {
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    align-items: center;
 }
 
 .facebook-button:hover {
@@ -1008,23 +1012,17 @@ body::-webkit-scrollbar {
         width: 100%;
     }
 
-  .media-container {
+    .media-container {
     height: 400px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, 1fr));
     grid-template-areas:
-      "box-1 box-2 box-3"
-      "box-4 box-5 box-6";
-  }
+        "box-1 box-2 box-3"
+        "box-4 box-5 box-6";
+    }
 
-  .media-container .image:nth-child(7) {
+    .media-container .image:nth-child(7) {
     display: none;
-  }
-
-    .facebook-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 16px;
     }
 
     .menu-card-grid {
@@ -1064,19 +1062,19 @@ body::-webkit-scrollbar {
         justify-content: space-evenly;
         align-items: center;
     }
-    }
+}
 
 @media(max-width: 425px) {
     .media-container {
-    height: 300px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+        height: 300px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
         grid-template-areas:
             "box-1 box-2"
             "box-3 box-4";
     }
 
     .media-container .image:nth-child(n+5) {
-    display: none;
-  }
+        display: none;
+    }
 }
