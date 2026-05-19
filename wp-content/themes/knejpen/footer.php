@@ -28,7 +28,7 @@
         </div>
 
         <div class="footer-brand">
-			<img class="footer-logo" src="http://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-hero-billede.png" alt="Knejpen logo">
+			<img class="footer-logo" src="https://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-hero-billede.png" alt="Knejpen logo">
 		</div>
 
 	</div>
