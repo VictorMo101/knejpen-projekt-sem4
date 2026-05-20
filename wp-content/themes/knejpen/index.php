@@ -205,7 +205,7 @@
 
                     <div class="menu-item-dis">
                         <h3><?php echo esc_html($title); ?></h3>
-                        <p><?php echo esc_html($description); ?></p>
+                        <p><?php echo wp_kses_post($description); ?></p>
                     </div>
                     
                     <p class="menu-item-price"><?php echo esc_html($price); ?>,-</p>
@@ -251,7 +251,7 @@
                     <h3><?php echo esc_html($beershottitle); ?></h3>
                 </div>
 
-                <p class="menu-item-price"><?php echo esc_html($beershotprice); ?>,-</p>
+                <p class="menu-item-price"><?php echo wp_kses_post($beershotprice); ?>,-</p>
 
             </div>
         </div>

@@ -4,7 +4,7 @@
 		<div class="footer-visit">
 			<h3>Besøg os</h3>
             <p>Knejpen</p>
-            <p>Strandby Plads 4</p>
+            <p>Kongensgade 19</p>
             <p>6700 Esbjerg</p>
             <br>
             <h3>Kontakt os</h3>
