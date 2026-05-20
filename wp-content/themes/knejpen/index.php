@@ -251,7 +251,7 @@
                     <h3><?php echo esc_html($beershottitle); ?></h3>
                 </div>
 
-                <p class="menu-item-price"><?php echo wp_kses_post($beershotprice); ?>,-</p>
+                <div class="menu-item-price"><?php echo wp_kses_post($beershotprice); ?></div>
 
             </div>
         </div>
