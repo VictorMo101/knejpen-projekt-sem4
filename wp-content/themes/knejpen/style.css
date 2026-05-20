@@ -53,7 +53,6 @@ body::-webkit-scrollbar {
 .site-nav {
     display: flex;
     align-items: center;
-    gap: 2rem;
     flex-wrap: wrap;
 }
 
@@ -121,6 +120,7 @@ body::-webkit-scrollbar {
     position: relative;
     z-index: 2;
     width: 100%;
+    padding: 0 20px;
     background-color: var(--primary-color);
     z-index: 1;
     box-shadow: var(--box-shadow);
@@ -133,6 +133,7 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     margin: 0 auto;
     padding: 3.5rem 0;
+    gap: 4rem;
 }
 
 .about-text {
@@ -178,6 +179,7 @@ body::-webkit-scrollbar {
 
 .events-container {
     max-width: 1200px;
+    width: 100%;
     display: flex;
     align-items: center;  
     justify-content: center;
@@ -192,6 +194,8 @@ body::-webkit-scrollbar {
 }
 
 .events-line {
+    max-width: 1200px;
+    width: 100%;
     flex: 1;
     height: 2px;
     background-color: var(--secondary-color);
@@ -239,16 +243,16 @@ body::-webkit-scrollbar {
 
 .star {
     color: var(--secondary-color);
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
-    gap: 1px;
 }
 
 .events-carousel-wrapper {
     position: relative;
-    width: 1400px;
+    max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
-    padding-top: 80px;
+    padding: 80px 20px 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -469,7 +473,6 @@ body::-webkit-scrollbar {
 
 .menu-item-price{
     margin-left: auto;
-    white-space: nowrap;
 }
 
 .menu-card-item h3 {
@@ -501,13 +504,23 @@ body::-webkit-scrollbar {
 }
 
 .media-container {
-    height: auto;
+    padding: 0 20px;
+    height: 600px;
+    width: 100%;
+    max-width: 1200px;
     display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
-    grid-template-rows: 300px 300px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
     grid-template-areas:
         "box-1 box-2 box-3 box-4"
         "box-1 box-5 box-6 box-7"
+}
+
+.image {
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
 }
 
 .section-break {
@@ -522,6 +535,7 @@ body::-webkit-scrollbar {
     display: flex;
     left: 50%;
     top: 100%;
+    width: 240px;
     transform: translate(-50%, -50%);
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -533,6 +547,7 @@ body::-webkit-scrollbar {
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    align-items: center;
 }
 
 .facebook-button:hover {
@@ -817,7 +832,8 @@ body::-webkit-scrollbar {
 }
 
 .footer-logo {
-    height: 240px;
+    max-width: 300px;
+    width: 100%;
 }
 
 .footer-tagline {
@@ -892,9 +908,46 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 
-@media (min-width: 320px) {
+.desktop-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.phone-nav {
+    display: none;
+}
+
+@media(max-width: 1024px) {
+
+    .footer-inner {
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .footer-logo {
+        display: none;
+    }
+
+    .events-container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
     
-     .site-header {
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-logo {
+        display: block;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .site-header {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -915,59 +968,47 @@ body::-webkit-scrollbar {
         cursor: pointer;
     }
 
+    .phone-nav {
+        display: none;
+    }
+
     .site-nav a {
         display: none;
     }
 
-    .site-nav.active {
+    .phone-nav.active {
         position: absolute;
         top: 100%;
         right: 0;
         width: 100%;
-        background: rgba(20, 20, 20, 0.4);
-        backdrop-filter: blur(12px);
+        background: #00000090;
         display: flex;
         flex-direction: column;
-        align-items: center;
         padding: 1rem 0;
         gap: 1rem;
     }
 
-    .site-nav.active a {
+    .phone-nav.active a {
         display: block;
         width: 100%;
         text-align: left;
         padding: 0.5rem 1.5rem;
     }
+
     .about-container {
+        display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-    }
-
-    .about-text{
-        max-width: 100%;
-    }
-
-    .about-text h1 {
-        font-size: 32px;
-        padding: 1rem 1rem;
-    }
-
-    .about-text p {
-        font-size: 16px;
-        padding: 1rem 1rem;
     }
 
     .about-image {
         order: -1;
     }
 
+
     .events-container {
         flex-direction: grid;
-    }
-    
-    .events-container span {
-        display: none;
     }
 
     .events-carousel-wrapper {
@@ -982,36 +1023,40 @@ body::-webkit-scrollbar {
     .media-container {
     display: grid;
     grid-template-columns: 160px 160px;
-    grid-template-rows: 160px 160px;
+    grid-template-rows: 200px 200px;
     grid-template-areas:
         "box-1 box-2"
-        "box-1 box-3"
+        "box-1 box-3";
     }
 
-    .facebook-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 16px;
+    .media-container .image:nth-child(7) {
+    display: none;
     }
 
     .menu-card-grid {
         grid-template-columns: 1fr;
     }
+}
 
-    .menu-container{
-    padding: 1.8rem;
+@media(max-width: 645px) {
+    .event-card {
+        width: 300px;
+        height: auto;
     }
 
-    .menu-card-item{
-        gap: 10px;
+    .event-img-overlay {
+        height: 3rem;
     }
 
-    .menu-item-dis h3{
-        font-size: 18px;
+    .event-meta {
+        word-break: normal;
+        hyphens: auto;
     }
+}
 
-    .menu-item-price{
-        font-size: 22px;
+@media(max-width: 480px) {
+    .event-card {
+        width: 200px;
     }
 
     .footer-inner {
@@ -1025,124 +1070,9 @@ body::-webkit-scrollbar {
 
     .footer-brand img{
         width: 270px;
-        height: 217px;
+        height: 230px;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
         align-items: center;
-    }
-}
-
-@media (min-width: 768px) {
-
-
-    .about-container {
-        flex-direction: row-reverse;
-        align-items: center;
-    }
-
-    .about-text{
-        width: 50%;
-    }
-
-    .media-container {
-    display: grid;
-    grid-template-columns: 256px 256px 256px;
-    grid-template-rows: 200px 200px;
-    grid-template-areas:
-        "box-1 box-2 box-4"
-        "box-1 box-3 box-5";
-    }
-
-    .events-container span {
-        display: block;
-    }
-
-    .events-container h2{
-        font-size: 28px;
-    }
-
-    .facebook-button {
-        align-items: center;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 1023px) {
-    .site-nav {
-        display: none;
-        display: hidden;
-    }
-}
-
-@media (min-width: 1024px) {
-    
-    .burger-btn {
-        display: none;
-    }
-
-    .site-nav {
-        position: static;
-        display: flex;
-        flex-direction: row;
-        width: auto;
-        background: transparent;
-        padding: 0;
-        gap: 2rem;
-    }
-
-    .site-nav a {
-        display: block;
-    }
-
-    .site-nav.active {
-        display: flex;
-    }
-
-    .about-container {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .about-text {
-        width: 50%;
-    }
-
-    .about-text h1 {
-        font-size: 48px;
-    }
-
-    .about-text p {
-        font-size: 1.5rem;
-    }
-
-    .media-container {
-        display: grid;
-        grid-template-columns: 256px 256px 256px 256px;
-        grid-template-rows: 300px 300px;
-        grid-template-areas:
-            "box-1 box-2 box-4 box-6"
-            "box-1 box-3 box-5 box-7";
-    }
-
-    .facebook-button {
-        font-size: 30px;
-    }
-
-    .events-container h2 {
-        font-size: 30px;
-    }
-
-    .events-wrapper {
-        width: 1200px;
-    }
-
-    .menu-card-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
