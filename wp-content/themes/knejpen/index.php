@@ -22,8 +22,12 @@
 <section id="about">
     <div class="about-container">
         <div class="about-text">
-        <h1><?php echo esc_html(get_field('about-title')); ?></h1>
-        <p><?php echo wp_kses_post(get_field('about-description')); ?></p>
+        <?php
+            $about_title = get_field('about-title');
+            $about_description = get_field('about-description');
+        ?>
+        <h1><?php echo esc_html($about_title); ?></h1>
+        <p><?php echo wp_kses_post($about_description); ?></p>
         </div>
         <div class="about-image">
             <img src="<?php echo esc_url('https://knejpen-projekt.dk/wp-content/uploads/2026/05/IMG20260502172903-scaled.jpg'); ?>" alt="test ong">
@@ -52,8 +56,17 @@
 <div class="events-carousel-wrapper">
     <div class="events-wrapper" id="eventsWrapper">
         <?php while ( $events_query->have_posts() ) : $events_query->the_post(); ?>
-            <?php $event_img = get_field('event-img'); ?>
-            <a href="<?php the_permalink(); ?>" target="_blank">
+            <?php
+                $event_img = get_field('event-img');
+                $event_place = get_field('event-place');
+                $event_date = get_field('event_date');
+                $event_time = get_field('event-time');
+                $event_price = get_field('event-price');
+                $event_title = get_field('event-title');
+                $event_description = get_field('event-description');
+                $event_link = get_field('link-to-event');
+            ?>
+            <a href="<?php echo esc_url($event_link); ?>" target="_blank">
                 <div class="event-card">
                     <div class="event-img">
                         <?php if ( $event_img ) : ?>
@@ -67,7 +80,7 @@
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                             </svg>
-                            <p class="event-place"><?php the_field('event-place'); ?></p>
+                            <p class="event-place"><?php echo esc_html($event_place); ?></p>
                             <svg class="event-external" xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#FEF2A6" class="size-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                             </svg>
@@ -77,19 +90,19 @@
 
                     <div class="event-body">
                         <div class="event-meta">
-                            <span><?php the_field('event_date'); ?></span>
+                            <span><?php echo esc_html($event_date); ?></span>
                             <span class="sep">|</span>
-                            <span><?php the_field('event-time'); ?></span>
+                            <span><?php echo esc_html($event_time); ?></span>
                             <span class="sep">|</span>
-                            <span><?php the_field('event-price'); ?></span>
+                            <span><?php echo esc_html($event_price); ?></span>
                         </div>
 
                         <div class="event-title">
-                            <?php the_field('event-title'); ?>
+                            <?php echo esc_html($event_title); ?>
                         </div>
 
                         <div class="event-sub">
-                            <?php the_field('event-des'); ?>
+                            <?php echo esc_html($event_description); ?>
                         </div>
                     </div>
                 </div>
