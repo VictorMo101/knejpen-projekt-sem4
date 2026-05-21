@@ -2,8 +2,8 @@
 <html lang="da">
 <head>
     <?php wp_head(); ?>
-    <title>Knejpen</title>
-    <meta name="description" content="Knejpen, Esbjergs lokale bar">
+    <title><?php bloginfo('name'); ?></title>
+    <meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body <?php body_class(); ?>>

@@ -2,7 +2,7 @@
 <section id="home">
     <div class="video-wrap">
         <video autoplay muted loop playsinline>
-            <source src="<?php echo esc_url('https://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-hero-video.mp4'); ?>" alt="Knejpen Video" type="video/mp4">
+            <source src="<?php echo esc_url('https://knejpen-projekt.dk/wp-content/uploads/2026/05/knejpen-hero-video.mp4'); ?>" alt="Knejpen Stemnings Video" type="video/mp4">
         </video>
 
         <div class="video-overlay">
@@ -30,7 +30,7 @@
         <p><?php echo wp_kses_post($about_description); ?></p>
         </div>
         <div class="about-image">
-            <img src="<?php echo esc_url('https://knejpen-projekt.dk/wp-content/uploads/2026/05/IMG20260502172903-scaled.jpg'); ?>" alt="test ong">
+            <img src="<?php echo esc_url('https://knejpen-projekt.dk/wp-content/uploads/2026/05/serving-the-drinks-scaled.jpg'); ?>" alt="Bartender server drinks">
         </div>
     </div>
 </section>
@@ -152,11 +152,11 @@
                     $image = get_field('image');
                     if ($image) :
             ?>
-                        <div class="image" style="grid-area: <?php echo esc_attr($areas[$i]); ?>">
-                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                        </div>
+            <div class="image" style="grid-area: <?php echo esc_attr($areas[$i]); ?>">
+                <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            </div>
             <?php
-                    endif;
+                endif;
                     $i++;
                 endwhile;
                 wp_reset_postdata();
