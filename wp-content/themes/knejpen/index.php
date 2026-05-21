@@ -152,11 +152,11 @@
                     $image = get_field('image');
                     if ($image) :
             ?>
-                        <div class="image" style="grid-area: <?php echo esc_attr($areas[$i]); ?>">
-                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                        </div>
+            <div class="image" style="grid-area: <?php echo esc_attr($areas[$i]); ?>">
+                <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            </div>
             <?php
-                    endif;
+                endif;
                     $i++;
                 endwhile;
                 wp_reset_postdata();
