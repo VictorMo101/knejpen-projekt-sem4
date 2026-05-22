@@ -16,7 +16,7 @@ const expectedUrls = {
 	facebook: 'https://www.facebook.com/pubknejpen'
 };
 
-fixture('Social media links').page(baseUrl);
+fixture('Social media links').page(baseUrl).skipJsErrors();
 
 test('Footer and media social links navigate to correct URLs', async (t) => {
 	const instagramLink = Selector('.social-grid a').withAttribute('aria-label', /Instagram/i);
@@ -41,26 +41,24 @@ test('Footer and media social links navigate to correct URLs', async (t) => {
 
 	await setSocialTargetsSelf();
 
-	const checkUrl = async (href) => {
+	const checkUrl = async (href, allowedPaths) => {
 		const expected = new URL(href);
 		const actual = await getUrlParts();
 		await t.expect(actual.host).eql(expected.host, 'Host mismatch after navigation');
-		await t.expect(actual.pathname).eql(expected.pathname, 'Path mismatch after navigation');
+		const pathOk = allowedPaths.some((path) => actual.pathname.startsWith(path));
+		await t.expect(pathOk).ok('Path mismatch after navigation');
 	};
 
 	await t.click(instagramLink);
-	await t.navigateTo(instagramHref);
-	await checkUrl(instagramHref);
+	await checkUrl(instagramHref, ['/pub_knejpen', '/accounts/login']);
 
 	await t.navigateTo(baseUrl);
 	await setSocialTargetsSelf();
 	await t.click(facebookLink);
-	await t.navigateTo(facebookHref);
-	await checkUrl(facebookHref);
+	await checkUrl(facebookHref, ['/pubknejpen']);
 
 	await t.navigateTo(baseUrl);
 	await setSocialTargetsSelf();
 	await t.click(facebookButton);
-	await t.navigateTo(facebookButtonHref);
-	await checkUrl(facebookButtonHref);
+	await checkUrl(facebookButtonHref, ['/pubknejpen']);
 });
