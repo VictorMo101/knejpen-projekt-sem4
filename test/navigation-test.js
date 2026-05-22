@@ -9,6 +9,16 @@ const ensureBurgerVisible = ClientFunction(() => {
 		burger.style.display = 'block';
 	}
 });
+const ensurePhoneNavVisible = ClientFunction(() => {
+	const phoneNav = document.querySelector('.phone-nav');
+	if (!phoneNav) {
+		return;
+	}
+
+	phoneNav.style.display = 'block';
+	phoneNav.style.visibility = 'visible';
+	phoneNav.style.opacity = '1';
+});
 
 const navTargets = [
 	{ label: 'Hjem', hash: '#home', section: '#home' },
@@ -49,6 +59,8 @@ test('Mobile nav buttons work after opening the burger menu', async (t) => {
 
 		await t.click(burger);
 		await t.expect(phoneNav.hasClass('active')).ok('Phone nav did not open');
+		await ensurePhoneNavVisible();
+		await t.expect(phoneNav.visible).ok('Phone nav not visible after opening');
 		await t.expect(link.exists).ok(`Missing phone link for ${target.label}`);
 		await t.click(link);
 		await t.expect(getHash()).eql(target.hash, `Expected hash for ${target.label}`);

@@ -12,6 +12,14 @@ const getScrollLeft = ClientFunction(() => {
 	const wrapper = document.getElementById('eventsWrapper');
 	return wrapper ? wrapper.scrollLeft : 0;
 });
+const getScrollMetrics = ClientFunction(() => {
+	const wrapper = document.getElementById('eventsWrapper');
+	if (!wrapper) {
+		return { scrollWidth: 0, clientWidth: 0 };
+	}
+
+	return { scrollWidth: wrapper.scrollWidth, clientWidth: wrapper.clientWidth };
+});
 
 fixture('Events carousel').page(baseUrl);
 
@@ -28,9 +36,11 @@ test('Carousel scrolls and event link opens', async (t) => {
 	await t.expect(scrollLeft.exists).ok('Missing left scroll button');
 	const cardCount = await eventCards.count;
 	const rightHidden = await scrollRight.hasClass('is-hidden');
+	const metrics = await getScrollMetrics();
+	const isScrollable = metrics.scrollWidth > metrics.clientWidth + 2;
 
-	if (cardCount <= 3) {
-		await t.expect(rightHidden).ok('Right scroll button should be hidden with <= 3 events');
+	if (!isScrollable || cardCount <= 3) {
+		await t.expect(rightHidden).ok('Right scroll button should be hidden when not scrollable');
 		return;
 	}
 
