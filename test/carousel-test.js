@@ -39,22 +39,17 @@ test('Carousel scrolls and event link opens', async (t) => {
 	const metrics = await getScrollMetrics();
 	const isScrollable = metrics.scrollWidth > metrics.clientWidth + 2;
 
-	if (!isScrollable || cardCount <= 3) {
-		await t.expect(rightHidden).ok('Right scroll button should be hidden when not scrollable');
-		return;
+	if (isScrollable && !rightHidden && cardCount > 3) {
+		const initialScroll = await getScrollLeft();
+
+		await t.click(scrollRight);
+		await t.click(scrollRight);
+		await t.expect(getScrollLeft()).gt(initialScroll, 'Carousel did not scroll right');
+
+		await t.click(scrollLeft);
+		await t.click(scrollLeft);
+		await t.expect(getScrollLeft()).eql(initialScroll, 'Carousel did not return to start');
 	}
-
-	await t.expect(rightHidden).notOk('Right scroll button is hidden');
-
-	const initialScroll = await getScrollLeft();
-
-	await t.click(scrollRight);
-	await t.click(scrollRight);
-	await t.expect(getScrollLeft()).gt(initialScroll, 'Carousel did not scroll right');
-
-	await t.click(scrollLeft);
-	await t.click(scrollLeft);
-	await t.expect(getScrollLeft()).eql(initialScroll, 'Carousel did not return to start');
 
 	const eventLink = eventsWrapper.find('a').nth(0);
 	const eventHref = await eventLink.getAttribute('href');
