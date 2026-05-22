@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "testcafe chrome:headless test/"
+    "test": "testcafe edge test/"
   },
   "devDependencies": {
     "dotenv": "^16.4.7",
