@@ -50,7 +50,7 @@ test('Footer and media social links navigate to correct URLs', async (t) => {
 	};
 
 	await t.click(instagramLink);
-	await checkUrl(instagramHref, ['/pub_knejpen', '/accounts/login']);
+	await checkUrl(instagramHref, ['/pub_knejpen', '/accounts', '/consent', '/privacy', '/legal']);
 
 	await t.navigateTo(baseUrl);
 	await setSocialTargetsSelf();
