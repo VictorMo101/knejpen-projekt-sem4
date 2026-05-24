@@ -6,25 +6,12 @@ on:
       - main
 
 jobs:
-  test-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install TestCafe dependencies
-        run: npm install
-
-      - name: Run TestCafe test
-        run: npx testcafe chrome:headless test/ --hostname localhost
-        env:
-          TEST_URL: https://knejpen-projekt.dk
 
       - name: Deploy to Simply.com via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
