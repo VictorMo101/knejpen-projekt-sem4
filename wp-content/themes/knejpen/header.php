@@ -29,7 +29,7 @@
     </nav>
 </header>
 <div class="scroll-up-indicator">
-    <a tabindex="0" aria-label="Rul op" href="<?php echo esc_url( home_url( '/#home' ) ); ?>" class="scroll-up-link" aria-label="Scroll to top">
+    <a tabindex="0" aria-label="Rul op" href="<?php echo esc_url( home_url( '/#home' ) ); ?>" class="scroll-up-link">
         <svg class="scroll-up-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
             <path fill="currentColor" d="M12 16.5 5 9.5l1.4-1.4L12 13.7l5.6-5.6L19 9.5z"/>
         </svg>
